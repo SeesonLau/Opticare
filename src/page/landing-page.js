@@ -1,30 +1,26 @@
 import React from 'react';
-import logo from '../logo.svg';
 import '../styles/landing-page.css';
-import Example from '../components/example.jsx'
+import HomePageHeader from '../components/home-page-header';
+import Example from '../components/example.jsx';
 
-
-function App() {
+function HomePage() {
   return (
-    <div className="Example">
-      <header className="Login-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-      <Example />
-      <Example />
+    <div className="home-page-container">
+      {/* Full viewport height section including header */}
+      <div className="full-height-section">
+        <HomePageHeader />
+        <div className="content-section">
+          <h2>Welcome to OptiCare</h2>
+          <p>Optimize your eye care journey with us. Sign in or register to get started.</p>
+        </div>
+      </div>
+      {/* Scrolls to the second section */}
+      <div className="scroll-section">
+        <Example />
+        <Example />
+      </div>
     </div>
   );
 }
 
-export default App;
+export default HomePage;
