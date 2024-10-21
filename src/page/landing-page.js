@@ -1,6 +1,6 @@
 import React from 'react';
 import logo from '../logo.svg';
-import './landing-page.css';
+import '../styles/landing-page.css';
 import Example from '../components/example.jsx'
 
 
