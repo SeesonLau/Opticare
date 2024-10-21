@@ -3,10 +3,11 @@ import logo from '../logo.svg';
 import './landing-page.css';
 import Example from '../components/example.jsx'
 
+
 function App() {
   return (
     <div className="Example">
-      <header className="App-header">
+      <header className="Login-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
           Edit <code>src/App.js</code> and save to reload.
@@ -20,6 +21,7 @@ function App() {
           Learn React
         </a>
       </header>
+      <Example />
       <Example />
     </div>
   );
