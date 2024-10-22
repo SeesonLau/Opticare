@@ -18,4 +18,6 @@ code {
   align-items: center; /* Center vertically if height is set */
   height: 100vh; /* Take full viewport height for vertical centering */
   text-align: center; /* Center text */
+  background: linear-gradient(180deg, #86CFFC 0%, #F1F1FF 100%); /*background color*/
+
 }
