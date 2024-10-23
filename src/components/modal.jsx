@@ -9,6 +9,8 @@ const Modal = ({ isOpen, onClose, title }) => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [showPassword, setShowPassword] = useState(false);
+    const [userType, setUserType] = useState('Patient'); // Default to Patient
+
 
     const handleClearEmail = () => {
         setEmail('');
@@ -21,6 +23,10 @@ const Modal = ({ isOpen, onClose, title }) => {
     const handleButtonClick = () => {
         // Placeholder for button click function
         console.log('Sign In button clicked!');
+    };
+
+    const handleToggleUserType = (type) => {
+        setUserType(type);
     };
 
     if (!isOpen) return null;
@@ -36,6 +42,38 @@ const Modal = ({ isOpen, onClose, title }) => {
                     <CloseIcon /> {/* Close icon */}
                 </button>
                 <h2>{title}</h2>
+
+                 {/* User Type Picker Section */}
+                 <div style={{ display: 'flex', justifyContent: 'center', marginBottom: '10px', marginLeft: '300px'}}>
+                    <div style={{ display: 'flex', gap: '0px' }}>
+                        <button 
+                            onClick={() => handleToggleUserType('Patient')} 
+                            style={{
+                                backgroundColor: userType === 'Patient' ? '#90DD2B' : '#FFFFFF',
+                                color: userType === 'Patient' ? 'white' : '#A1CBFF',
+                                padding: '10px 20px',
+                                border: '1px solid #4461F2',
+                                borderRadius: '7px',
+                                cursor: 'pointer',
+                            }}
+                        >
+                            Patient
+                        </button>
+                        <button 
+                            onClick={() => handleToggleUserType('Clinic')} 
+                            style={{
+                                backgroundColor: userType === 'Clinic' ? '#90DD2B' : '#FFFFFF',
+                                color: userType === 'Clinic' ? 'white' : '#A1CBFF',
+                                padding: '10px 20px',
+                                border: '1px solid #4461F2',
+                                borderRadius: '7px',
+                                cursor: 'pointer',
+                            }}
+                        >
+                            Clinic
+                        </button>
+                    </div>
+                </div>
 
                 {/* Flex container for logo and welcome text */}
                 <div style={{ display: 'flex', alignItems: 'center', marginBottom: '10px', marginLeft: '120px' }}>
