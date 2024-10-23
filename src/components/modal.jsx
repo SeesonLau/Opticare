@@ -5,7 +5,7 @@ import VisibilityOffIcon from '@mui/icons-material/VisibilityOff';
 import '../styles/modal.css';
 import OpticareLogo from '../image/OptiCare LOGO.png';
 
-const Modal = ({ isOpen, onClose, title }) => {
+const Modal = ({ isOpen, onClose, title, onClinicSelect }) => { // Added onClinicSelect prop
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [showPassword, setShowPassword] = useState(false);
@@ -27,6 +27,9 @@ const Modal = ({ isOpen, onClose, title }) => {
 
     const handleToggleUserType = (type) => {
         setUserType(type);
+        if (type === 'Clinic') { // Check if Clinic is selected
+            onClinicSelect(); // Call the function to open the second modal
+        }
     };
 
     if (!isOpen) return null;
