@@ -1,7 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import '../src/styles/index.css'
-import App from './page/landing-page';
+
+// import App from './page/landing-page';
+//ako gi change ang Landing Page for testing
+import App from './page/users/clinic/ClinicHomePage';
 import reportWebVitals from './reportWebVitals';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
