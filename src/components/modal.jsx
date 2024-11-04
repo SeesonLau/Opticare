@@ -240,4 +240,5 @@ const Modal = ({ isOpen, onClose, title }) => {
     );
 };
 
+
 export default Modal;
