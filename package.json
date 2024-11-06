@@ -6,7 +6,8 @@
     "@emotion/react": "^11.13.3",
     "@emotion/styled": "^11.13.0",
     "@heroicons/react": "^2.1.5",
-    "@mui/material": "^6.1.4",
+    "@mui/icons-material": "^6.1.5",
+    "@mui/material": "^6.1.5",
     "@react-aria/button": "^3.10.1",
     "@react-aria/dialog": "^3.5.19",
     "@react-aria/overlays": "^3.23.4",
@@ -56,5 +57,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "@babel/plugin-proposal-private-property-in-object": "^7.21.11"
   }
 }
