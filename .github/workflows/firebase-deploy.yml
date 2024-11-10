@@ -3,7 +3,7 @@ name: Firebase Hosting Deployment
 on:
   pull_request:
     branches:
-      - main  # This will trigger the workflow when there is a PR targeting the main branch
+      - master  # This will trigger the workflow when there is a PR targeting the main branch
 
 jobs:
   deploy:
