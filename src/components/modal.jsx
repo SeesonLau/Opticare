@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import CloseIcon from '@mui/icons-material/Close';
 import VisibilityIcon from '@mui/icons-material/Visibility';
 import VisibilityOffIcon from '@mui/icons-material/VisibilityOff';
@@ -10,7 +11,8 @@ const Modal = ({ isOpen, onClose, title }) => {
     const [password, setPassword] = useState('');
     const [showPassword, setShowPassword] = useState(false);
     const [userType, setUserType] = useState('Patient'); // Default to Patient
-
+    
+    const navigate = useNavigate();
 
     const handleClearEmail = () => {
         setEmail('');
@@ -21,8 +23,13 @@ const Modal = ({ isOpen, onClose, title }) => {
     };
 
     const handleButtonClick = () => {
-        // Placeholder for button click function
-        console.log('Sign In button clicked!');
+        if (userType === 'Patient') {
+            navigate('/patient-homepage');  // Route to patient homepage
+          } else if (userType === 'Clinic') {
+            navigate('/clinic-homepage');  // Route to clinic homepage
+          } else {
+            alert("Please select a user type first!"); 
+          }
     };
 
     const handleToggleUserType = (type) => {
