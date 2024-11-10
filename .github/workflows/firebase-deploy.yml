@@ -1,30 +1,35 @@
-name: Deploy to Firebase Hosting
+name: Firebase Hosting Deployment
 
 on:
-  push:
+  pull_request:
     branches:
-      - main  # Change to your default branch if needed
+      - main  # This will trigger the workflow when there is a PR targeting the main branch
 
 jobs:
   deploy:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-latest  # This specifies the OS for the build environment
 
     steps:
+      # Step 1: Checkout the code from the repository
       - name: Checkout code
         uses: actions/checkout@v2
 
+      # Step 2: Set up Node.js (if you need Node.js for your project)
       - name: Set up Node.js
         uses: actions/setup-node@v2
         with:
-          node-version: '14'  # Specify the version you need
+          node-version: '14'  # or use the Node.js version you're working with
 
+      # Step 3: Install dependencies (if you use npm or yarn)
       - name: Install dependencies
-        run: npm install
+        run: npm install  # or use yarn install if you're using yarn
 
-      - name: Build project
-        run: npm run build  # Adjust if you have a build script
+      # Step 4: Build the project (if needed)
+      - name: Build the project
+        run: npm run build  # Adjust this to your build script
 
-      - name: Deploy to Firebase Hosting
-        run: |
-          npm install -g firebase-tools
-          firebase deploy --token ${{ secrets.FIREBASE_TOKEN }}
+      # Step 5: Firebase deploy (make sure you've set the FIREBASE_TOKEN secret)
+      - name: Deploy to Firebase
+        run: firebase deploy --token ${{ secrets.FIREBASE_TOKEN }}  # Deploy using the Firebase CLI token
+        env:
+          FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}  # Ensure the secret is added to GitHub
