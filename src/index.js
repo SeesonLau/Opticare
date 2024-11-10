@@ -2,7 +2,6 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import './styles/index.css';
-import './styles/landing-page.css';
 import HomePageHeader from './components/home-page-header';
 import Example from './components/example';
 import PatientHomePage from './components/patient/patient-homepage'; // route to patient-homepage.jsx
