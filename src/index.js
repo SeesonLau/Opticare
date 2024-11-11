@@ -8,6 +8,7 @@ import PatientHomePage from './components/patient/patient-homepage'; // route to
 import ClinicHomePage from './components/clinic/clinic-homepage'; // route to clinic-homepage.jsx
 import reportWebVitals from './reportWebVitals';
 import { BrowserRouter as Router } from 'react-router-dom';
+<<<<<<< HEAD
 
 const HomePage = () => (
   <div className="home-page-container">
@@ -36,6 +37,8 @@ const App = () => (
     </Routes>
   </BrowserRouter>
 );
+=======
+>>>>>>> 1256ffb2e955122896d6f2bf0a35c1d985709c5b
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
