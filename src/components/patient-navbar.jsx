@@ -1,20 +1,13 @@
 import React from 'react';
 import '../styles/navigationbar.css';
-import { Link } from 'react-router-dom'
 
 const PatientNavBar = () => {
-  
-const handleHomeClick = () => {
-        
-};
-  // Define functions for each button
-  const handleProfileClick = () => {
-   
-  };
+  // Define functions for each button (optional for now)
+  const handleHomeClick = () => {};
 
-  const handleAppointmentsClick = () => {
-   
-  };
+  const handleProfileClick = () => {};
+
+  const handleAppointmentsClick = () => {};
 
   const handleSearchClick = () => {
     console.log("Search button clicked");
@@ -33,20 +26,29 @@ const handleHomeClick = () => {
 
   return (
     <div className="navbar">
-      <img className="OpticareLogo21" src="../image/OptiCare LOGO.png" alt="OptiCare Logo" />
-
-      <Link to="/" className="home" aria-label="Home">
-        Home
-      </Link>
-      <Link to="/profile" className="profile" aria-label="Profile">
-        Profile
-      </Link>
-      <Link to="/appointments" className="appointments" aria-label="Appointments">
-        Appointments
-      </Link>
-      <button className="search" onClick={handleSearchClick} aria-label="Search" />
-      <button className="settings" onClick={handleSettingsClick} aria-label="Settings" />
-      <button className="logOut" onClick={handleLogOutClick} aria-label="Log Out" />
+      <img className="OpticareLogo21" src="/image/OptiCare LOGO2.png" alt="OptiCare Logo" />
+  
+      <button className="home" onClick={handleHomeClick}>
+        <img src="image/home.png" alt="Home" className="icon" />
+      </button>
+      <button className="profile" onClick={handleProfileClick}>
+        <img src="../image/profile.png" alt="Profile" className="icon" />
+      </button>
+      <button className="appointments" onClick={handleAppointmentsClick}>
+        <img src="../image/calendar.png" alt="Appointments" className="icon" />
+      </button>
+      <button className="search" onClick={handleSearchClick} aria-label="Search">
+        <img src="../image/search.png" alt="Search" className="icon" />
+      </button>
+      <button className="health-records" onClick={handleSearchClick} aria-label="Health Records">
+        <img src="../image/health-records.png" alt="Health Records" className="icon" />
+      </button>
+      <button className="settings" onClick={handleSettingsClick} aria-label="Settings">
+        <img src="../image/settings.png" alt="Settings" className="icon" />
+      </button>
+      <button className="logOut" onClick={handleLogOutClick} aria-label="Log Out">
+        <img src="../image/logout.png" alt="Log Out" className="icon" />
+      </button>
     </div>
   );
 };

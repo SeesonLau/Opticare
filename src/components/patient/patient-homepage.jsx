@@ -1,18 +1,24 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';  
+import PatientNavBar from '../patient-navbar.jsx';
+import '../styles/patient-homepage.css';
 
 const PatientHomePage = () => {
   const navigate = useNavigate();  
 
   const handleBackClick = () => {
-    navigate(-1);  //placeholder rani na code for back
+    navigate(-1);  // Placeholder for back navigation
   };
 
   return (
-    <div>
-      <button className="back-button" onClick={handleBackClick}>Back</button>
-      <h1>Patient Homepage</h1>
-      <p>Ari butang code nimo jamel.</p>
+    <div className="main-container">
+      {/* Add the navigation bar at the left */}
+      <PatientNavBar />
+      
+      <div className="content">
+        <button className="back-button" onClick={handleBackClick}>Back</button>
+        <h1 className="welcome">Welcome</h1>
+      </div>
     </div>
   );
 };
