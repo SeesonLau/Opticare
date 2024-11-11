@@ -1,0 +1,8 @@
+{
+  "projects": {
+    "default": "opticare-b5d09",
+    "opticaredb": "opticare-b5d09"
+  },
+  "targets": {},
+  "etags": {}
+}
