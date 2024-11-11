@@ -1,50 +1,75 @@
+.main-container {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  padding: 20px;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  width: 70%;
+  margin-left: 20px;
+}
+
 .welcome {
-    width: 408.393px;
-    height: 70.618px;
-    flex-shrink: 0;
-    color: #3A8EF6;
-    font-family: Montserrat;
-    font-size: 45px;
-    font-style: normal;
-    font-weight: 600;
-    line-height: 76.045px; 
-  }
+  width: 408.393px;
+  height: 70.618px;
+  flex-shrink: 0;
+  color: #3A8EF6;
+  font-family: Montserrat;
+  font-size: 45px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 76.045px; 
+}
 
 .card {
-    width: 885px;
-height: 313px;
-flex-shrink: 0;
-border-radius: 16.386px;
-background: linear-gradient(66deg, #B2E6FD -5.25%, #9BD8F1 35.43%, rgba(45, 12, 255, 0.71) 98.77%);
-box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
-  }
+  width: 885px;
+  height: 313px;
+  flex-shrink: 0;
+  border-radius: 16.386px;
+  background: linear-gradient(66deg, #B2E6FD -5.25%, #9BD8F1 35.43%, rgba(45, 12, 255, 0.71) 98.77%);
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  margin-top: 20px;  /* Space between Welcome message and card */
+}
 
-  .notifications{
-    width: 885px;
-height: 525px;
-flex-shrink: 0;
-border-radius: 20px;
-background: #FFF;
-box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
-  }
+.notifications {
+  width: 885px;
+  height: 525px;
+  flex-shrink: 0;
+  border-radius: 20px;
+  background: #FFF;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  margin-top: 20px;  /* Space between card and notifications */
+}
 
-  .calendar{
-    width: 413.75px;
-height: 518.212px;
-flex-shrink: 0;
-border-radius: 16.386px;
-background: #FFF;
-  }
+/* Right container to stack calendar and facts vertically */
+.right-container {
+  display: flex;
+  flex-direction: column; /* Ensure elements stack vertically */
+  justify-content: flex-start;
+  align-items: flex-start;
+  margin-left: 20px;
+}
 
-  .facts{
-    display: flex;
-width: 513px;
-height: 347.181px;
-padding: 0px 49.618px 0px 49.632px;
-justify-content: center;
-align-items: center;
-flex-shrink: 0;
-  }
+.calendar {
+  width: 413.75px;
+  height: 518.212px;
+  flex-shrink: 0;
+  border-radius: 16.386px;
+  background: #FFF;
+}
 
-
-  
+.facts {
+  display: flex;
+  width: 513px;
+  height: 347.181px;
+  padding: 0px 49.618px 0px 49.632px;
+  justify-content: center;
+  align-items: center;
+  flex-shrink: 0;
+  margin-top: 20px;  /* Space between calendar and facts */
+}

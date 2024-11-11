@@ -12,12 +12,20 @@ const PatientHomePage = () => {
 
   return (
     <div className="main-container">
-      {/* Add the navigation bar at the left */}
       <PatientNavBar />
       
       <div className="content">
         <button className="back-button" onClick={handleBackClick}>Back</button>
         <h1 className="welcome">Welcome</h1>
+        
+        <div className="card"></div>
+        
+        <div className="notifications"></div>
+        
+        <div className="right-container">
+          <div className="calendar"></div>
+          <div className="facts"></div>
+        </div>
       </div>
     </div>
   );
