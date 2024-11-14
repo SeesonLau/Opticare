@@ -7,10 +7,7 @@ const HomePageHeader = () => {
     const [activeModal, setActiveModal] = useState(null); // Track which modal is active
     const [activeLink, setActiveLink] = useState('home'); // Track the active link
   
-    const handleHomeClick = () => {
-      setActiveModal(null); // Close both modals
-      setActiveLink('home'); // Set active link to home
-    };
+    
   
     const handleRegisterClick = () => {
       setActiveModal('register'); // Open register modal
@@ -31,11 +28,7 @@ const HomePageHeader = () => {
           </div>
           <nav className="navigation" aria-label="Main Navigation">
             <ul className="nav-links">
-              <li>
-                <a href="#home" onClick={handleHomeClick} className={activeLink === 'home' ? 'active-link' : ''}>
-                  Home
-                </a>
-              </li>
+              
               <li>
                 <a href="#login" onClick={handleLoginClick} className={activeLink === 'login' ? 'active-link' : ''}>
                   Login

@@ -202,32 +202,42 @@ const Modal = ({ isOpen, onClose, title }) => {
                 
                 {/* New Styled Sign In Button Section */}
                 <div style={{ paddingLeft: '430px', marginTop: '20px', position: 'relative' }}>
-                    <div style={{
-                        width: '250px',
-                        height: '40px',
-                        position: 'absolute',
-                        background: '#4461F2',
-                        boxShadow: '0px 11.851164817810059px 20.73953628540039px 3.950388193130493px rgba(68, 97, 242, 0.15)',
-                        borderRadius: '9.88px',
-                        cursor: 'pointer'
-                    }} onClick={handleButtonClick}>
+                    <div 
+                        style={{
+                            width: '250px',
+                            height: '40px',
+                            position: 'absolute',
+                            background: '#4461F2',
+                            boxShadow: '0px 11.851164817810059px 20.73953628540039px 3.950388193130493px rgba(68, 97, 242, 0.15)',
+                            borderRadius: '9.88px',
+                            cursor: 'pointer',
+                            zIndex: 1 // Ensures the background div is clickable
+                        }} 
+                        onClick={handleButtonClick}
+                    >
                     </div>
-                    <div style={{
-                        position: 'absolute',
-                        left: '525px',
-                        top: '-15px',
-                        color: 'white',
-                        fontSize: '17px',
-                        fontFamily: 'Montserrat',
-                        fontWeight: 700,
-                        lineHeight: '76.04px',
-                        letterSpacing: '1.53px',
-                        wordWrap: 'break-word',
-                        height: '100%'
-                    }}>
+                    <div 
+                        style={{
+                            position: 'absolute',
+                            left: '525px',
+                            top: '-15px',
+                            color: 'white',
+                            fontSize: '17px',
+                            fontFamily: 'Montserrat',
+                            fontWeight: 700,
+                            lineHeight: '76.04px',
+                            letterSpacing: '1.53px',
+                            wordWrap: 'break-word',
+                            height: '100%',
+                            cursor: 'pointer',  // Makes the text itself clickable
+                            zIndex: 2 // Ensures the text is on top of the background
+                        }} 
+                        onClick={handleButtonClick}  // Adds the same click event to the text
+                    >
                         Sign In
                     </div>
                 </div>
+
 
                 {/* New Text Section Below */}
                 <div style={{ width: '100%', height: '100%', paddingLeft: '50px', paddingTop: '20px' }}>
