@@ -1,7 +1,7 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';  
 import PatientNavBar from '../patient-navbar.jsx';
-import '../../styles/patient-homepage.css';
+import '../../styles/patient-homepage.css'
 
 const PatientHomePage = () => {
   const navigate = useNavigate();  
