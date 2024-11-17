@@ -1,12 +1,11 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import '../styles/navigationbar.css';
 
 const PatientNavBar = () => {
-  // Define functions for each button (optional for now)
+
   const handleHomeClick = () => {};
-
   const handleProfileClick = () => {};
-
   const handleAppointmentsClick = () => {};
 
   const handleSearchClick = () => {
