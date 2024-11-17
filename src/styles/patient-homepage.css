@@ -9,20 +9,34 @@
   background: #F1F1FF;
 }
 
-.content {
+.content-wrapper {
   display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: flex-start;
-  width: 885px;
-  margin-left: 20px;
+  justify-content: space-between;  /* Ensures that the sections are spaced */
+  padding: 0;  /* Remove padding to prevent excess space */
+  width: 100%;
   box-sizing: border-box;
 }
+
+.content {
+  width: 72%;  /* Adjusted width to account for padding/margin */
+  display: flex;
+  flex-direction: column;
+  gap: 10px;  /* Reduced gap between elements */
+}
+
+.content-right {
+  width: 26%;  /* Adjusted width to make room */
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+
 
   .welcome {
     width: 408.393px;
     height: 70.618px;
-    flex-shrink: 0;
+    flex-shrink: 0; 
     color: #3A8EF6;
     font-family: Montserrat;
     font-size: 45px;
@@ -84,8 +98,6 @@
   margin-top: 5px;
 }
 
-
-
 /* Notifications Container */
 .notifications {
   width: 885px; 
@@ -122,30 +134,20 @@
   margin-top: 10px; 
 }
 
-.right-container {
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: flex-start;
-  margin-left: 20px;
-}
-
+/* Right Section - Separate content */
 .calendar {
   width: 413.75px;
   height: 518.212px;
   flex-shrink: 0;
   border-radius: 16.386px;
   background: #FFF;
-}
+  
 
+}
 .facts {
-  display: flex;
-  width: 513px;
+  width: 413.75px;
   height: 347.181px;
-  padding: 0px 49.618px 0px 49.632px;
-  justify-content: center;
-  align-items: center;
   flex-shrink: 0;
-  margin-top: 20px;  /* Space between calendar and facts */
+  border-radius: 16.386px;
+  background: #FFF;
 }
-
