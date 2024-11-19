@@ -17,6 +17,4 @@ export default function LoginModal ({isOpen, onClose, id}){
             </div>
         </div>
     )
-
-    
 }
