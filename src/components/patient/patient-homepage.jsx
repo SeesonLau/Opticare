@@ -1,34 +1,25 @@
 import React from 'react';
-import { useNavigate } from 'react-router-dom';  
 import PatientNavBar from '../patient-navbar.jsx';
-import '../../styles/patient-homepage.css'
+import '../../styles/patient-home.css';
+import PatientHome from './patient-home.jsx';
+import PatientProfile from './patient-profile.jsx';
+import PatientAppointments from './patient-appointments.jsx';
+import { Routes, Route } from 'react-router-dom';
 
 const PatientHomePage = () => {
-  const navigate = useNavigate();  
-
-  const handleBackClick = () => {
-    navigate(-1);  // Placeholder for back navigation
-  };
-
+ 
   return (
-    <div className="main-container">
+  <div>
       <PatientNavBar />
-      
-      <div className="content">
-        <button className="back-button" onClick={handleBackClick}>Back</button>
-        <h1 className="welcome">Welcome</h1>
-        
-        <div className="card"></div>
-        
-        <div className="notifications"></div>
-        
-        <div className="right-container">
-          <div className="calendar"></div>
-          <div className="facts"></div>
-        </div>
+  
+      <div className="main-content">
+        <Routes>
+          <Route path="/" element={<PatientHome />} />
+          <Route path="/profile" element={<PatientProfile />} />
+          <Route path="/appointments" element={<PatientAppointments />} />
+        </Routes>
       </div>
     </div>
   );
 };
-
 export default PatientHomePage;
