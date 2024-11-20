@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom/client';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import './styles/index.css';
 import HomePageHeader from './components/home-page-header';
-import Example from './components/example';
+
 import PatientHomePage from './components/patient/patient-homepage'; // route to patient-homepage.jsx
 import ClinicHomePage from './components/clinic/clinic-homepage'; // route to clinic-homepage.jsx
 import reportWebVitals from './reportWebVitals';
@@ -17,11 +17,6 @@ const HomePage = () => (
         <h2>Welcome to OptiCare</h2>
         <p>Optimize your eye care journey with us. Sign in or register to get started.</p>
       </div>
-    </div>
-    {/* Scrolls to the second section */}
-    <div className="scroll-section">
-      <Example />
-      <Example />
     </div>
   </div>
 );
