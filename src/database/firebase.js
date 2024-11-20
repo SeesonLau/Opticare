@@ -26,3 +26,5 @@ const database = getDatabase(app);
 
 // Or for Firestore
 const firestore = getFirestore(app);
+
+//google provider nga account
