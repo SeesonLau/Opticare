@@ -1,0 +1,61 @@
+.navbar {
+    display: flex;
+    width: 50px;
+    height: 100vh; /* Full height of the viewport */
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 30px; /* Adjust spacing to fit the buttons */
+    flex-shrink: 0;
+    background: #C0DCFF;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25) inset;
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+
+
+.icon {
+    width: 30px;
+    height: 30px;
+    background-color: transparent; 
+    object-fit: contain; 
+}
+
+.OpticareLogo21 {
+    width: 40px;
+    height: 40px;
+}
+
+.main-container {
+    display: flex;
+    height: 100vh; 
+}
+
+.content {
+    margin-left: 50px; 
+    flex-grow: 1; 
+    padding: 20px; 
+    overflow-y: auto; 
+}
+
+.navbar button {
+    background: none;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.navbar button:hover {
+    background-color: #E6E6E6; /* Add hover effect for buttons */
+    border-radius: 50%;
+}
+
+.navbar button img {
+    width: 100%; /* Scale images to fit within the button */
+    height: 100%;
+}
+

@@ -1,0 +1,68 @@
+.home-page-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px; 
+  background-color: #f0f8ff; /* Light blue background */
+}
+
+.full-height-section {
+  height: 100vh; 
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; 
+}
+
+.logo-section {
+  display: flex;
+  align-items: center; /* Align logo and title vertically */
+}
+
+.logo {
+  height: 40px; /* Adjust height as needed */
+  margin-right: 10px; /* Space between logo and title */
+}
+
+.logo-title {
+  font-size: 24px; /* Adjust font size as needed */
+  color: #50b748; /* Green color for the title */
+  margin-left: 10px; /* Space to the left */
+  font-family: 'Arial', sans-serif; /* Font family */
+  font-weight: bold; /* Bold text */
+}
+
+.nav-links {
+  list-style: none; /* Remove bullet points */
+  display: flex; /* Inline links */
+}
+
+.nav-links li {
+  margin: 0 15px; /* Space between links */
+}
+
+.nav-links a {
+  text-decoration: none; /* Remove underline */
+  color: #333; /* Default text color */
+  padding: 5px 0; /* Add spacing */
+  position: relative; /* For pseudo-element underline */
+  transition: color 0.3s ease; /* Smooth color transition */
+}
+
+.nav-links a.active-link {
+  color: #007BFF; /* Active link color */
+}
+
+.nav-links a::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -2px; /* Position underline */
+  height: 2px; /* Underline thickness */
+  background: transparent; /* No underline by default */
+  transition: background 0.3s ease; /* Smooth underline transition */
+}
+
+.nav-links a.active-link::after {
+  background: #007BFF; /* Blue underline for active links */
+}
