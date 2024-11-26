@@ -2,11 +2,13 @@ import React, { useState } from 'react';
 import '../../styles/patient-home.css';
 import Calendar from 'react-calendar';
 import 'react-calendar/dist/Calendar.css'; // Import default styles for react-calendar
-import '../../styles/clinic_styles/calendar-style.css';
-import '../../styles/clinic_styles/visit-style.css';
-import '../../styles/clinic_styles/clinic-homepage-style.css';
-import '../../styles/clinic_styles/patientlist-style.css';
-import '../../styles/clinic_styles/profile-style.css';
+import '../../styles/clinic/calendar-style.css';
+import '../../styles/clinic/visit-style.css';
+import '../../styles/clinic/clinic-homepage-style.css';
+import '../../styles/clinic/patientlist-style.css';
+import '../../styles/clinic/profile-style.css';
+import { MdAccountCircle } from "react-icons/md"; // Import MdAccountCircle icon
+
 
 
 
@@ -24,15 +26,18 @@ const ClinicHomePage = () => {
         <div className="content">
         <h1 className="clinic-homepage-title">Welcome</h1>
 
-          {/* Profile Card */}
-          <div className="profile-card">
+        {/* Profile Card */}
+        <div className="profile-card">
             {/* Profile Photo */}
             <div className="profile-photo">
-              <img
-                src={profileImageUrl || 'https://via.placeholder.com/100'}
-                alt="Profile"
-              />
+              {/* Conditionally render either the profile image or the MdAccountCircle icon */}
+              {profileImageUrl ? (
+                <img src={profileImageUrl} alt="Profile" />
+              ) : (
+                <MdAccountCircle className="profileicon" /> // Display the MdAccountCircle icon when no image is available
+              )}
             </div>
+
 
             {/* Profile Name */}
             <div className="profile-name">
@@ -76,10 +81,12 @@ const ClinicHomePage = () => {
 
              {/* Appointment Photo */}
              <div className="profile-photo">
-              <img
-                src={profileImageUrl || 'https://via.placeholder.com/100'}
-                alt="Profile"
-              />
+              {/* Conditionally render either the profile image or the MdAccountCircle icon */}
+              {profileImageUrl ? (
+                <img src={profileImageUrl} alt="Profile" />
+              ) : (
+                <MdAccountCircle className="profileicon" /> // Display the MdAccountCircle icon when no image is available
+              )}
             </div>
 
 
