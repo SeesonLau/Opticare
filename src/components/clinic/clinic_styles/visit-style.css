@@ -1,0 +1,36 @@
+.visit-title {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    color: #333;
+  }
+
+.Patient-title {
+    font-size: 1rem;
+    color: #333;
+  }
+
+  .container {
+    display: flex;  /* Enable flexbox */
+    gap: 20px;      /* Optional: Add space between the containers */
+  }
+  
+  .visit-newpatientContainer,
+  .visit-oldpatientContainer {
+    width: 200px;
+    height: 100px;
+    flex-shrink: 0;
+    border-radius: 20px;
+    background: #FFF;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    margin-top: 10px;
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    box-sizing: border-box;
+  }
+
+ .visit-card-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
