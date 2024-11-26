@@ -2,11 +2,11 @@ import React, { useState } from 'react';
 import '../../styles/patient-home.css';
 import Calendar from 'react-calendar';
 import 'react-calendar/dist/Calendar.css'; // Import default styles for react-calendar
-import './clinic_styles/calendar-style.css';
-import './clinic_styles/visit-style.css';
-import './clinic_styles/clinic-homepage-style.css';
-import './clinic_styles/patientlist-style.css';
-import './clinic_styles/profile-style.css';
+import '../../styles/clinic_styles/calendar-style.css';
+import '../../styles/clinic_styles/visit-style.css';
+import '../../styles/clinic_styles/clinic-homepage-style.css';
+import '../../styles/clinic_styles/patientlist-style.css';
+import '../../styles/clinic_styles/profile-style.css';
 
 
 
@@ -115,3 +115,4 @@ const ClinicHomePage = () => {
 };
 
 export default ClinicHomePage;
+

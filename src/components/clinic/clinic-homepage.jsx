@@ -21,3 +21,4 @@ const ClinicHomePage = () => {
   );
 };
 export default ClinicHomePage;
+
