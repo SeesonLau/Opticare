@@ -1,20 +1,23 @@
 import React from 'react';
-import { useNavigate } from 'react-router-dom';  
+import PatientNavBar from '../patient-navbar.jsx';
+import '../../styles/patient-home.css';
+import ClinicHome from './clinic-home.jsx';
+import ClinicProfile from './clinic-profile.jsx';
+import { Routes, Route } from 'react-router-dom';
 
-const PatientHomePage = () => {
-  const navigate = useNavigate();  
-
-  const handleBackClick = () => {
-    navigate(-1);  //placeholder rani na code for back
-  };
-
+const ClinicHomePage = () => {
+ 
   return (
-    <div>
-      <button className="back-button" onClick={handleBackClick}>Back</button>
-      <h1>Clinic Homepage</h1>
-      <p>Ari butang code nimo lord kent.</p>
+  <div>
+      <PatientNavBar />
+  
+      <div className="main-content">
+        <Routes>
+          <Route path="/" element={<ClinicHome />} />
+          <Route path="/profile" element={<ClinicProfile />} />
+        </Routes>
+      </div>
     </div>
   );
 };
-
-export default PatientHomePage;
+export default ClinicHomePage;
