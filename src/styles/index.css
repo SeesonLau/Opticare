@@ -5,6 +5,8 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background: linear-gradient(135deg, #0f766e, #4c1d95, #34d399); /* Gradient for the whole page */
+  color: white; /* Default text color for readability */
 }
 
 code {
@@ -18,8 +20,6 @@ code {
   align-items: center; /* Center vertically if height is set */
   height: 100vh; /* Take full viewport height for vertical centering */
   text-align: center; /* Center text */
-  background: linear-gradient(180deg, #86CFFC 0%, #F1F1FF 100%); /*background color*/
-
 }
 
 .App {
@@ -73,3 +73,186 @@ code {
   box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
 }
 
+/* Homepage Styles */
+.home-page-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background: rgba(0, 0, 0, 0.4); /* Slight transparent overlay */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.logo-section {
+  display: flex;
+  align-items: center;
+}
+
+.logo {
+  height: 50px;
+  margin-right: 10px;
+}
+
+.logo-title {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: white;
+}
+
+.auth-buttons {
+  display: flex;
+  gap: 1rem;
+}
+
+.glass-button {
+  padding: 0.8rem 1.5rem;
+  border: none;
+  border-radius: 25px;
+  background: rgba(255, 255, 255, 0.2);
+  color: white;
+  font-size: 1rem;
+  cursor: pointer;
+  backdrop-filter: blur(8px);
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.glass-button:hover {
+  background: rgba(255, 255, 255, 0.4);
+  transform: translateY(-3px);
+}
+
+.hero-section {
+  height: 90vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.hero-content h2 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+/* Shared styles for scrollable sections */
+.scrollable-section {
+  padding: 4rem 2rem;
+  text-align: center;
+  margin: 2rem auto;
+  max-width: 800px;
+  color: white; /* Consistent text color */
+}
+
+.scrollable-section h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.scrollable-section p,
+.scrollable-section ul {
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+
+.scrollable-section ul {
+  list-style: none;
+  padding: 0;
+}
+
+.scrollable-section li {
+  margin-bottom: 0.5rem;
+}
+
+.scrollable-section p {
+  margin-bottom: 1.5rem;
+}
+
+/* About Section */
+.about-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 4rem 2rem;
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto;
+  height: 50vh; /* Set to 50% of the viewport height */
+  color: white;
+}
+
+.about-section h2 {
+  font-size: clamp(1.5rem, 5vw, 3rem); /* Dynamically scales text size based on the viewport width */
+  margin-bottom: 1rem;
+}
+
+.about-section p {
+  font-size: clamp(1rem, 3vw, 1.5rem); /* Dynamically scales text size */
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+}
+
+/* Contact Section */
+.contact-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 4rem 2rem;
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto;
+  height: 50vh; /* Set to 50% of the viewport height */
+  color: white;
+}
+
+.contact-section h2 {
+  font-size: clamp(1.5rem, 5vw, 3rem); /* Dynamically scales text size */
+  margin-bottom: 1rem;
+}
+
+.contact-section ul {
+  list-style: none;
+  padding: 0;
+}
+
+.contact-section li {
+  margin-bottom: 0.5rem;
+}
+
+.contact-section p {
+  font-size: clamp(1rem, 3vw, 1.5rem); /* Dynamically scales text size */
+  margin-bottom: 1.5rem;
+}
+
+/* About Section */
+.about-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 4rem 2rem;
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto;
+  height: 60vh; /* Increased to 60% of the viewport height */
+  color: white;
+}
+
+/* Contact Section */
+.contact-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 4rem 2rem;
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto;
+  height: 60vh; /* Increased to 60% of the viewport height */
+  color: white;
+}
