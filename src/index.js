@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { FaSignInAlt, FaUserPlus } from 'react-icons/fa';
 import ReactDOM from 'react-dom/client';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import './styles/index.css';
@@ -33,6 +34,8 @@ const HomePage = () => {
           <img src={opticareLogo} alt="OptiCare Logo" className="logo" />
           <h1 className="logo-title">Opticare</h1>
         </div>
+
+        {/* Buttons for larger screens */}
         <div className="auth-buttons">
           <button className="glass-button" onClick={handleLoginClick}>
             Login
@@ -40,6 +43,22 @@ const HomePage = () => {
           <button className="glass-button" onClick={handleRegisterClick}>
             Register
           </button>
+        </div>
+
+        {/* Icons for smaller screens */}
+        <div className="auth-icons">
+          <FaSignInAlt
+            size={24}
+            color="white"
+            onClick={handleLoginClick} // Login icon
+            style={{ cursor: 'pointer' }}
+          />
+          <FaUserPlus
+            size={24}
+            color="white"
+            onClick={handleRegisterClick} // Register icon
+            style={{ cursor: 'pointer' }}
+          />
         </div>
       </header>
 
@@ -91,7 +110,6 @@ const HomePage = () => {
     </div>
   );
 };
-
 
 const App = () => (
   <BrowserRouter>
