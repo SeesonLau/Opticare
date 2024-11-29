@@ -52,6 +52,11 @@ const PatientHomePage = () => {
 
         {/* Right Section - Separate Content */}
         <div className="content-right">
+          <div className="user-container">
+            <div className="user-box"></div>
+            <div className="user-photo"></div>
+            <div className="user-text">User</div>
+            </div>
           <div className="calendar">
             <h3>Calendar</h3>
             <div className="card-content">
