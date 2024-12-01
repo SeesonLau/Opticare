@@ -1,8 +1,11 @@
-import React from 'react';
-import '../../styles/patient/patient-home.css';
+import React, { useState } from 'react';
+import Calendar from 'react-calendar';
+import 'react-calendar/dist/Calendar.css';
+import '../../styles/patient-home.css';
+
 
 const PatientHomePage = () => {
-  
+  const [date, setDate] = useState(new Date());
   // Placeholder photo (fallback)
   const profileImageUrl = null;  // Fetched URL or null for fallback
 
@@ -52,15 +55,24 @@ const PatientHomePage = () => {
 
         {/* Right Section - Separate Content */}
         <div className="content-right">
-          <div className="calendar">
-            <h3>Calendar</h3>
-            <div className="card-content">
-              {/* Content for card 1 */}
-            </div>
-          </div>
+          <div className="user-container">
+            <div className="user-box"></div>
+            <div className="user-photo"></div>
+            <div className="user-text">User</div>
+            </div>\
+            
+            <div className="calendar">
+        <h3>Calendar</h3>
+        <div className="card-content">
+          <Calendar
+            onChange={setDate}
+            value={date}
+          />
+        </div>
+      </div>
 
           <div className="facts">
-            <h3>Fun facts</h3>
+          <div className="card-text">Fun facts</div>
             <div className="card-content">
               {/* Content for card 2 */}
             </div>
