@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import '../../styles/patient-home.css';
+import '../../styles/patient/patient-home.css';
 import Calendar from 'react-calendar';
 import 'react-calendar/dist/Calendar.css'; // Import default styles for react-calendar
 import '../../styles/clinic/calendar-style.css';
@@ -8,10 +8,6 @@ import '../../styles/clinic/clinic-homepage-style.css';
 import '../../styles/clinic/patientlist-style.css';
 import '../../styles/clinic/profile-style.css';
 import { MdAccountCircle } from "react-icons/md"; // Import MdAccountCircle icon
-
-
-
-
 
 const ClinicHomePage = () => {
   const [date, setDate] = useState(new Date()); // State to manage the selected date
@@ -122,4 +118,3 @@ const ClinicHomePage = () => {
 };
 
 export default ClinicHomePage;
-

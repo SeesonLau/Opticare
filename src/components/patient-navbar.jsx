@@ -1,6 +1,6 @@
 import React from 'react';
 import { FaHome, FaUser, FaCalendarAlt, FaSearch, FaHospitalUser, FaCog, FaSignOutAlt } from 'react-icons/fa'; // Import React Icons
-import '../styles/navigationbar.css';
+import '../styles/patient/navigationbar.css';
 
 const PatientNavBar = () => {
   // Define functions for each button (optional for now)

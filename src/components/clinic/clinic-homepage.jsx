@@ -1,6 +1,6 @@
 import React from 'react';
 import PatientNavBar from '../patient-navbar.jsx';
-import '../../styles/patient-home.css';
+import '../../styles/patient/patient-home.css';
 import ClinicHome from './clinic-home.jsx';
 import ClinicProfile from './clinic-profile.jsx';
 import { Routes, Route } from 'react-router-dom';
@@ -21,4 +21,3 @@ const ClinicHomePage = () => {
   );
 };
 export default ClinicHomePage;
-

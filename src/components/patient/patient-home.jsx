@@ -1,5 +1,5 @@
 import React from 'react';
-import '../../styles/patient-home.css';
+import '../../styles/patient/patient-home.css';
 
 const PatientHomePage = () => {
   
