@@ -2,13 +2,65 @@ import React, { useState } from 'react';
 import Calendar from 'react-calendar';
 import 'react-calendar/dist/Calendar.css';
 import '../../styles/patient-home.css';
-import '../../styles/patient-profile.css';
+import Textbox from '../patientprofile-textbox.jsx';
 import { MdAccountCircle } from "react-icons/md"; 
+import SaveButton from '../savebutton.jsx';
 
 const PatientHomePage = () => {
   const [date, setDate] = useState(new Date());
   // Placeholder photo (fallback)
   const profileImageUrl = null;  // Fetched URL or null for fallback
+
+  const [firstname, setFirstname] = useState(''); 
+  const [lastname, setLastname] = useState(''); 
+
+  const [gender, setGender] = useState('');
+
+  const [address, setAddress] = useState('');
+  const [birthday, setBirthday] = useState('');
+
+  const [phonenumber, setPhonenumber] = useState('');
+  const [email, setEmail] = useState('');
+
+  const handleSave = () => {
+    //Logic for saving profile
+  };
+
+  const handleChange1 = (e) => {
+    setFirstname(e.target.value);
+  };
+
+  const handleChange2 = (e) => {
+    setLastname(e.target.value);
+  };
+
+  const handleChange3 = (e) => {
+    setGender(e.target.value);
+  };
+
+  const handleChange4 = (e) => {
+    setAddress(e.target.value);
+  };
+
+  const handleChange5 = (e) => {
+    setBirthday(e.target.value);
+  };
+
+  
+  const handleChange6 = (e) => {
+    const value = e.target.value;
+    // Allow only digits and limit to 11 characters
+    if (/^\d{0,11}$/.test(value)) {
+      setPhonenumber(value);
+    }
+  };
+  
+
+  const handleChange7 = (e) => {
+    setEmail(e.target.value);
+  };
+
+
 
   return (
     <div className="main-container">
@@ -40,8 +92,62 @@ const PatientHomePage = () => {
 
           {/* Profile  */}
           <div className="profile">
+          <SaveButton onClick={handleSave} />
           <h1 className="profile-text">Profile</h1>
+          <div className="textbox-container">
+
+           {/* First row: Firstname and Lastname */}
+    <div className="textbox-row">
+      <Textbox 
+        label="Firstname" 
+        value={firstname} 
+        onChange={handleChange1} 
+      />
+      <Textbox 
+        label="Lastname" 
+        value={lastname} 
+        onChange={handleChange2} 
+      />
+    </div>
+    
+    {/* Gender */}
+    <div className="textbox-center">
+      <Textbox 
+        label="Gender" 
+        value={gender} 
+        onChange={handleChange3} 
+      />
+    </div>
+    
+    {/* Second row: Address and Birthday */}
+    <div className="textbox-row">
+      <Textbox 
+        label="Address" 
+        value={address} 
+        onChange={handleChange4} 
+      />
+      <Textbox 
+        label="Birthday" 
+        value={birthday} 
+        onChange={handleChange5} 
+      />
+    </div>
+    
+    {/* Third row: Phonenumber and Email */}
+    <div className="textbox-row">
+      <Textbox 
+        label="Phone Number" 
+        value={phonenumber} 
+        onChange={handleChange6} 
+      />
+      <Textbox 
+        label="Email" 
+        value={email} 
+        onChange={handleChange7} 
+      />
           </div>
+        </div>
+        </div>
         </div>
 
         {/* Right Section - Separate Content */}
@@ -54,7 +160,7 @@ const PatientHomePage = () => {
 
               {/* Calendar  */}
             <div className="calendar-card">
-            <h1 className="profile-text">Calendar</h1>
+            <h1 className="calendar-text">Calendar</h1>
         <div className="card-content">
           <Calendar
             onChange={setDate}
