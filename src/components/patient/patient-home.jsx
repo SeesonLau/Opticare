@@ -2,7 +2,8 @@ import React, { useState } from 'react';
 import Calendar from 'react-calendar';
 import 'react-calendar/dist/Calendar.css';
 import '../../styles/patient-home.css';
-
+import '../../styles/patient-profile.css';
+import { MdAccountCircle } from "react-icons/md"; 
 
 const PatientHomePage = () => {
   const [date, setDate] = useState(new Date());
@@ -16,16 +17,18 @@ const PatientHomePage = () => {
       <div className="content-wrapper">
         {/* Left Section - Content */}
         <div className="content">
-          <h1 className="welcome">Welcome!</h1>
+          <h1 className="main-text">Welcome!</h1>
 
-          {/* Profile Card */}
-          <div className="profile-card">
+        {/* Profile Card */}
+        <div className="main-card">
             {/* Profile Photo */}
             <div className="profile-photo">
-              <img 
-                src={profileImageUrl || "https://via.placeholder.com/100"} 
-                alt="Profile" 
-              />
+              {/* Conditionally render either the profile image or the MdAccountCircle icon */}
+              {profileImageUrl ? (
+                <img src={profileImageUrl} alt="Profile" />
+              ) : (
+                <MdAccountCircle className="profileicon" /> // Display the MdAccountCircle icon when no image is available
+              )}
             </div>
 
             {/* Profile Name */}
@@ -35,21 +38,9 @@ const PatientHomePage = () => {
             </div>
           </div>
 
-          {/* Notifications and Clinics Section */}
-          <div className="notifications">
-            <div className="notification-section">
-              <h3>Notifications</h3>
-              <div className="notification-card">
-                {/* Notifications content */}
-              </div>
-            </div>
-
-            <div className="clinics-section">
-              <h3>Clinics Near You</h3>
-              <div className="clinics-card">
-                {/* Clinics content */}
-              </div>
-            </div>
+          {/* Profile  */}
+          <div className="profile">
+          <h1 className="profile-text">Profile</h1>
           </div>
         </div>
 
@@ -59,20 +50,22 @@ const PatientHomePage = () => {
             <div className="user-box"></div>
             <div className="user-photo"></div>
             <div className="user-text">User</div>
-            </div>\
-            
-            <div className="calendar">
-        <h3>Calendar</h3>
+            </div>
+
+              {/* Calendar  */}
+            <div className="calendar-card">
+            <h1 className="profile-text">Calendar</h1>
         <div className="card-content">
           <Calendar
             onChange={setDate}
             value={date}
+            className="react-calendar"  // Apply custom class to the calendar
           />
         </div>
       </div>
 
-          <div className="facts">
-          <div className="card-text">Fun facts</div>
+        {/* Article  */}
+          <div className="article-card">
             <div className="card-content">
               {/* Content for card 2 */}
             </div>
