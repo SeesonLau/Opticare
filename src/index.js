@@ -115,8 +115,8 @@ const App = () => (
   <BrowserRouter>
     <Routes>
       <Route path="/" element={<HomePage />} />
-      <Route path="/patient-homepage" element={<PatientHomePage />} />
-      <Route path="/clinic-homepage" element={<ClinicHomePage />} />
+      <Route path="/patient-homepage/*" element={<PatientHomePage />} />
+      <Route path="/clinic-homepage/*" element={<ClinicHomePage />} />
     </Routes>
   </BrowserRouter>
 );
