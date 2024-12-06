@@ -182,5 +182,4 @@ const PatientHomePage = () => {
   );
 };
 
-
 export default PatientHomePage;

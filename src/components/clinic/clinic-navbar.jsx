@@ -1,5 +1,5 @@
 import React from 'react';
-import '../styles/navigationbar.css';
+import '../styles/patient/navigationbar.css';
 
 const ClinicNavBar = () => {
   // Define functions for each button (optional for now)
@@ -52,6 +52,3 @@ const ClinicNavBar = () => {
 };
 
 export default ClinicNavBar;
-
-
-

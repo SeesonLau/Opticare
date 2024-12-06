@@ -9,4 +9,3 @@ const ClinicProfile = () => {
 };
 
 export default ClinicProfile;
-
