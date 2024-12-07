@@ -1,25 +1,32 @@
-import React from 'react';
-import PatientNavBar from '../patient-navbar.jsx';
+import React, { useState } from 'react';
+import PatientNavBar from './patient-navbar.jsx';
 import '../../styles/patient/patient-home.css';
 import PatientHome from './patient-home.jsx';
-import PatientProfile from './patient-profile.jsx';
 import PatientAppointments from './patient-appointments.jsx';
-import { Routes, Route } from 'react-router-dom';
+import Settings from '../settings.jsx';
+import PatientSearch from './patient-search.jsx';
+import PatientRecords from './patient-records.jsx';
+
 
 const PatientHomePage = () => {
- 
-  return (
-  <div>
-      <PatientNavBar />
-  
-      <div className="main-content">
-        <Routes>
-          <Route path="/" element={<PatientHome />} />
-          <Route path="/profile" element={<PatientProfile />} />
-          <Route path="/appointments" element={<PatientAppointments />} />
-        </Routes>
+    const [activeComponent, setActiveComponent] = useState('dashboard'); // This controls which component is displayed
+
+    const handleComponentChange = (component) => {
+      setActiveComponent(component); // Update the active component when a button is clicked
+    };
+
+    return (
+      <div>
+        <PatientNavBar onComponentChange={handleComponentChange} />
+        <div className="main-content">
+          {activeComponent === 'dashboard' && <PatientHome />}
+          {activeComponent === 'patient-records' && <PatientRecords />}
+          {activeComponent === 'patient-appointments' && <PatientAppointments />}
+          {activeComponent === 'patient-search' && <PatientSearch />}
+          {activeComponent === 'settings' && <Settings />}
+        </div>
       </div>
-    </div>
-  );
+    );
 };
+
 export default PatientHomePage;

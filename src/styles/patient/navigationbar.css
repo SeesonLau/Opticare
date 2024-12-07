@@ -18,7 +18,15 @@
     margin-bottom: 20px;
     
 }
-
+/* Remove underline from <Link> components in the navbar */
+.navbar-link {
+    text-decoration: none; /* Remove the underline */
+  }
+  
+  /* Ensure the text inside buttons isn't affected by other text styles */
+  .navbar button {
+    text-decoration: none; /* Make sure text inside buttons is not underlined */
+  }
 
 .icon {
     width: 30px;
@@ -92,5 +100,3 @@ margin-bottom: 30px;
     text-align: left; 
     transition: color 0.3s ease; 
 }
-
-
