@@ -46,7 +46,6 @@ const PatientHomePage = () => {
     setBirthday(e.target.value);
   };
 
-  
   const handleChange6 = (e) => {
     const value = e.target.value;
     // Allow only digits and limit to 11 characters
@@ -54,13 +53,10 @@ const PatientHomePage = () => {
       setPhonenumber(value);
     }
   };
-  
 
   const handleChange7 = (e) => {
     setEmail(e.target.value);
   };
-
-
 
   return (
     <div className="main-container">

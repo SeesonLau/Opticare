@@ -1,5 +1,5 @@
 import React from 'react';
-import PatientNavBar from '../patient-navbar.jsx';
+import PatientNavBar from '../patient/patient-navbar.jsx';
 import '../../styles/patient/patient-home.css';
 import ClinicHome from './clinic-home.jsx';
 import ClinicProfile from './clinic-profile.jsx';
