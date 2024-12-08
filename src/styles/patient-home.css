@@ -119,6 +119,7 @@ font-weight: 600;
   margin-left: 20px;
   border: 1px solid var(--Color-Blue-Blue-600, #4183CF);
   position: relative;
+  
 }
 
 .profile-text {
@@ -142,14 +143,15 @@ font-weight: 600;
 
 .textbox-row {
   display: flex;
-  justify-content: space-between; 
-  gap: 20px; 
+  justify-content: flex-start;
+  gap: 70px; 
   width: 100%;
 }
 
 .textbox-center {
   display: flex;
   justify-content: center; 
+  margin-left: -90px;
 }
 
 /* Right Section - Separate content */
