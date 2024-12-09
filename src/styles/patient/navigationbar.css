@@ -3,7 +3,7 @@
     width: 282px;
     height: 982px;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
     gap: 100px;
     flex-shrink: 0;
@@ -15,7 +15,7 @@
     left: 0;
     margin-top: 20px;
     margin-left: 20px;  
-    margin-bottom: 20px;
+   margin-bottom: 20px; 
     
 }
 /* Remove underline from <Link> components in the navbar */
@@ -37,11 +37,13 @@
     
 }
 
-.OptiCareLogo {
-    width: 282px;
-height: 175px;
-flex-shrink: 0;
-margin-bottom: 30px;
+.navbar-logo {
+    width   : 282px;
+    height: 175px;
+    flex-shrink: 0;
+    position: relative; 
+    top: 0; 
+    margin-bottom: -100px;
 }
 
 .main-container {
@@ -68,35 +70,43 @@ margin-bottom: 30px;
     gap: 30px;
     width: 100%;
     height: auto; 
+    height: 40px;
 }
 
 .navbar button:hover {
     background-color: #E6E6E6; 
-    
+    width: 260px;
+    height: 40px;
+    font-family: Montserrat;
+    border-radius: 5px;
+    background: var(--Color-Blue-Blue-200, #C8E3F5);   
 }
 
 .navbar button:hover .icon {
-    color: black;
+    color: #4183CF;
 }
 
 .navbar button:hover .button-text {
-    color: black; 
+    color: #4183CF;
 }
 
 .icon {
-    width: 30px;
-    height: 30px;
+    width: 22px;
+    height: 25px;
     color: white; /* Default icon color */
     transition: color 0.3s ease; /* Smooth transition for hover effect */
 }
 
 .button-text {
     font-size: 16px;
-    font-family: Montserrat, sans-serif;
+    font-family: Montserrat;
     font-weight: 600;
     color: var(--Color-Blue-Blue-50, #F1F8FD); 
     line-height: 150%;
     white-space: nowrap; 
     text-align: left; 
     transition: color 0.3s ease; 
+    width: 91px;
+    height: 25px;
+    flex-shrink: 0;
 }
