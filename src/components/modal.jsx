@@ -187,7 +187,7 @@ const Modal = ({ isOpen, onClose, title }) => {
                             position: 'absolute',
                             background: 'linear-gradient(90deg, #4183CF 0%, #77B032 100%)',
                             boxShadow: '0px 11.851164817810059px 20.73953628540039px 3.950388193130493px rgba(68, 97, 242, 0.15)',
-                            borderRadius: '9.88px',
+                            borderRadius: '20px',
                             cursor: 'pointer',
                             zIndex: 1 // Ensures the background div is clickable
                         }} 
