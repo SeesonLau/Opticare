@@ -4,7 +4,7 @@ import CloseIcon from '@mui/icons-material/Close';
 import VisibilityIcon from '@mui/icons-material/Visibility';
 import VisibilityOffIcon from '@mui/icons-material/VisibilityOff';
 import '../styles/modal.css';
-import OpticareLogo from '../image/OptiCare LOGO.png';
+import OpticareLogo from '../image/OptiCareLogo.png';
 
 const Modal = ({ isOpen, onClose, title }) => {
     const [email, setEmail] = useState('');
@@ -25,11 +25,11 @@ const Modal = ({ isOpen, onClose, title }) => {
     const handleButtonClick = () => {
         if (userType === 'Patient') {
             navigate('/patient-homepage');  // Route to patient homepage
-          } else if (userType === 'Clinic') {
+        } else if (userType === 'Clinic') {
             navigate('/clinic-homepage');  // Route to clinic homepage
-          } else {
+        } else {
             alert("Please select a user type first!"); 
-          }
+        }
     };
 
     const handleToggleUserType = (type) => {
@@ -50,9 +50,26 @@ const Modal = ({ isOpen, onClose, title }) => {
                 </button>
                 <h2>{title}</h2>
 
-                 {/* User Type Picker Section */}
-                 <div style={{ display: 'flex', justifyContent: 'center', marginBottom: '10px', marginLeft: '300px'}}>
-                    <div style={{ display: 'flex', gap: '0px' }}>
+                {/* Logo and user type picker section */}
+                <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', marginBottom: '50px' }}>
+                    {/* Logo image aligned at the top center */}
+                    <img style={{ width: '300px', height: 'auto', marginRight: '50px', marginTop: '-100px' }} src={OpticareLogo} alt="Opticare Logo" />
+
+                    {/* Add the styled text below the logo and welcome message */}
+                    <div style={{ width: '100%', textAlign: 'right', marginRight: '300px', marginTop: '-90px', }}>
+                        <span style={{ color: '#3871C1', fontSize: '15px', fontFamily: 'Montserrat', fontWeight: 700, lineHeight: '40px', wordWrap: 'break-word' }}>
+                            Login to&nbsp;
+                        </span>
+                        <span style={{ color: '#6FB118', fontSize: '15px', fontFamily: 'Montserrat', fontWeight: 700, lineHeight: '40px', wordWrap: 'break-word' }}>
+                            Optimize&nbsp;
+                        </span>
+                        <span style={{ color: '#219DE9', fontSize: '15px', fontFamily: 'Montserrat', fontWeight: 700, lineHeight: '40px', wordWrap: 'break-word' }}>
+                            Your Eye Care Journey
+                        </span>
+                    </div>
+                    
+                    {/* User Type Picker Section */}
+                    <div style={{ display: 'flex', gap: '0px', marginTop: '30px', marginBottom: '50px' }}>
                         <button 
                             onClick={() => handleToggleUserType('Patient')} 
                             style={{
@@ -82,43 +99,8 @@ const Modal = ({ isOpen, onClose, title }) => {
                     </div>
                 </div>
 
-                {/* Flex container for logo and welcome text */}
-                <div style={{ display: 'flex', alignItems: 'center', marginBottom: '10px', marginLeft: '120px' }}>
-                    {/* Add the logo image */}
-                    <img style={{ width: '30%', height: 'auto' }} src={OpticareLogo} alt="Opticare Logo" />
-                    
-                    {/* Welcome Message next to the logo */}
-                    <div style={{
-                        color: '#0D54AC',
-                        fontSize: '35px',
-                        fontFamily: 'Montserrat',
-                        fontWeight: 700,
-                        lineHeight: '1.2',
-                        marginLeft: '150px',
-                        marginTop: '-70px'
-                    }}>
-                        Welcome!
-                    </div>
-                </div>
-
-                {/* Add the styled text below the logo and welcome message */}
-                <div style={{ width: '100%', textAlign: 'left', paddingLeft: '50px' }}>
-                    <span style={{ color: '#3871C1', fontSize: '30px', fontFamily: 'Montserrat', fontWeight: 700, lineHeight: '40px', wordWrap: 'break-word' }}>
-                        Sign In to&nbsp;
-                    </span>
-                    <span style={{ color: '#6FB118', fontSize: '30px', fontFamily: 'Montserrat', fontWeight: 700, lineHeight: '40px', wordWrap: 'break-word' }}>
-                        Optimize
-                    </span>
-                    <span style={{ color: '#3871C1', fontSize: '30px', fontFamily: 'Montserrat', fontWeight: 700, lineHeight: '40px', wordWrap: 'break-word' }}>
-                        <br />
-                    </span>
-                    <span style={{ color: '#219DE9', fontSize: '30px', fontFamily: 'Montserrat', fontWeight: 700, lineHeight: '40px', wordWrap: 'break-word' }}>
-                        Your Eye Care Journey
-                    </span>
-                </div>
-
                 {/* Email Input Section */}
-                <div style={{ paddingLeft: '420px', marginTop: '-170px' }}> {/* Reduced marginTop for higher positioning */}
+                <div style={{ paddingLeft: '275px', marginTop: '-70px' }}> {/* Reduced marginTop for higher positioning */}
                     <div style={{ position: 'relative', display: 'flex', alignItems: 'right' }}>
                         <input
                             type="email"
@@ -128,7 +110,7 @@ const Modal = ({ isOpen, onClose, title }) => {
                             style={{
                                 width: '250px',
                                 height: '40px',
-                                borderRadius: '9.88px',
+                                borderRadius: '5px',
                                 border: '1px solid #667085',
                                 paddingLeft: '10px',
                                 fontSize: '15px',
@@ -142,7 +124,7 @@ const Modal = ({ isOpen, onClose, title }) => {
                                 onClick={handleClearEmail}
                                 style={{
                                     position: 'absolute',
-                                    right: '120px',
+                                    left: '240px',
                                     top: '10px',
                                     border: 'none',
                                     background: 'transparent',
@@ -159,7 +141,7 @@ const Modal = ({ isOpen, onClose, title }) => {
                 </div>
 
                 {/* Password Input Section */}
-                <div style={{ paddingLeft: '420px', marginTop: '20px' }}>
+                <div style={{ paddingLeft: '275px', marginTop: '20px' }}>
                     <div style={{ position: 'relative', display: 'flex', alignItems: 'center' }}>
                         <input
                             type={showPassword ? 'text' : 'password'}
@@ -169,7 +151,7 @@ const Modal = ({ isOpen, onClose, title }) => {
                             style={{
                                 width: '250px',
                                 height: '40px',
-                                borderRadius: '9.88px',
+                                borderRadius: '5px',
                                 border: '1px solid #667085',
                                 paddingLeft: '10px',
                                 fontSize: '15px',
@@ -182,7 +164,7 @@ const Modal = ({ isOpen, onClose, title }) => {
                             onClick={togglePasswordVisibility}
                             style={{
                                 position: 'absolute',
-                                right: '116px',
+                                left: '238px',
                                 top: '10px',
                                 border: 'none',
                                 background: 'transparent',
@@ -194,22 +176,18 @@ const Modal = ({ isOpen, onClose, title }) => {
                             {showPassword ? <VisibilityOffIcon style={{ fontSize: '15px' }} /> : <VisibilityIcon style={{ fontSize: '15px' }} />}
                         </button>
                     </div>
-                    {/* Forget Password Text */}
-                    <div style={{ color: '#719DD4', fontSize: '12px', fontFamily: 'Montserrat', fontWeight: 700, lineHeight: '76.04px', letterSpacing: '1.20px', wordWrap: 'break-word', textAlign: 'right', marginTop: '-10px', paddingRight: '115px'}}>
-                        Forget Password?
-                    </div>
                 </div>
-                
-                {/* New Styled Sign In Button Section */}
-                <div style={{ paddingLeft: '430px', marginTop: '20px', position: 'relative' }}>
+
+                {/* Sign In Button Section */}
+                <div style={{ display: 'flex', justifyContent: 'center', marginLeft: '15px', marginTop: '35px', position: 'relative' }}>
                     <div 
                         style={{
                             width: '250px',
                             height: '40px',
                             position: 'absolute',
-                            background: '#4461F2',
+                            background: 'linear-gradient(90deg, #4183CF 0%, #77B032 100%)',
                             boxShadow: '0px 11.851164817810059px 20.73953628540039px 3.950388193130493px rgba(68, 97, 242, 0.15)',
-                            borderRadius: '9.88px',
+                            borderRadius: '20px',
                             cursor: 'pointer',
                             zIndex: 1 // Ensures the background div is clickable
                         }} 
@@ -219,7 +197,7 @@ const Modal = ({ isOpen, onClose, title }) => {
                     <div 
                         style={{
                             position: 'absolute',
-                            left: '525px',
+                            left: '360px',
                             top: '-15px',
                             color: 'white',
                             fontSize: '17px',
@@ -234,28 +212,21 @@ const Modal = ({ isOpen, onClose, title }) => {
                         }} 
                         onClick={handleButtonClick}  // Adds the same click event to the text
                     >
-                        Sign In
+                        Login
                     </div>
                 </div>
 
-
-                {/* New Text Section Below */}
-                <div style={{ width: '100%', height: '100%', paddingLeft: '50px', paddingTop: '20px' }}>
-                    <span style={{ color: '#219DE9', fontSize: '18px', fontFamily: 'Carlito', fontWeight: 700, wordWrap: 'break-word' }}>
-                        if you don’t have an account<br />you can
-                    </span>
-                    <span style={{ color: 'black', fontSize: '18px', fontFamily: 'Carlito', fontWeight: 700, wordWrap: 'break-word' }}> </span>
-                    <span style={{ color: '#6FB118', fontSize: '18px', fontFamily: 'Carlito', fontWeight: 700, textDecoration: 'underline', wordWrap: 'break-word' }}>
-                        Register Here
-                    </span>
-                    <span style={{ color: '#6FB118', fontSize: '18px', fontFamily: 'Carlito', fontWeight: 700, wordWrap: 'break-word' }}>
-                        !
-                    </span>
+                {/* "or" Separator Section */}
+                <div style={{ width: '280px', height: '100px', marginLeft: '260px', justifyContent: 'center', alignItems: 'center', gap: '24px', display: 'inline-flex', marginTop: '20px' }}>
+                    <div style={{ flex: '1 1 0', height: '1px', background: '#4183CF' }}></div>
+                    <div style={{ textAlign: 'center', color: '#4183CF', fontSize: '16px', fontFamily: 'Inter', fontWeight: 500, lineHeight: '24px', wordWrap: 'break-word' }}>
+                        or
+                    </div>
+                    <div style={{ flex: '1 1 0', height: '1px', background: '#4183CF' }}></div>
                 </div>
             </div>
         </div>
     );
 };
-
 
 export default Modal;
