@@ -215,6 +215,15 @@ const Modal = ({ isOpen, onClose, title }) => {
                         Login
                     </div>
                 </div>
+
+                {/* "or" Separator Section */}
+                <div style={{ width: '280px', height: '100px', marginLeft: '260px', justifyContent: 'center', alignItems: 'center', gap: '24px', display: 'inline-flex', marginTop: '20px' }}>
+                    <div style={{ flex: '1 1 0', height: '1px', background: '#4183CF' }}></div>
+                    <div style={{ textAlign: 'center', color: '#4183CF', fontSize: '16px', fontFamily: 'Inter', fontWeight: 500, lineHeight: '24px', wordWrap: 'break-word' }}>
+                        or
+                    </div>
+                    <div style={{ flex: '1 1 0', height: '1px', background: '#4183CF' }}></div>
+                </div>
             </div>
         </div>
     );
