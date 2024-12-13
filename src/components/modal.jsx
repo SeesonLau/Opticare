@@ -5,6 +5,7 @@ import VisibilityIcon from '@mui/icons-material/Visibility';
 import VisibilityOffIcon from '@mui/icons-material/VisibilityOff';
 import '../styles/modal.css';
 import OpticareLogo from '../image/OptiCareLogo.png';
+import GoogleIcon from '../image/google.png';
 
 const Modal = ({ isOpen, onClose, title }) => {
     const [email, setEmail] = useState('');
@@ -224,6 +225,35 @@ const Modal = ({ isOpen, onClose, title }) => {
                     </div>
                     <div style={{ flex: '1 1 0', height: '1px', background: '#4183CF' }}></div>
                 </div>
+                
+{/* "Continue with Google" Section */}
+<div style={{ width: '250px', height: '100px', gap: '30px', marginLeft: '280px', marginTop: '-20px' }}>
+  <div style={{
+      display: 'flex',
+      alignItems: 'center', // Align the icon and text vertically
+      gap: '10px', // Adjust space between the icon and text
+      cursor: 'pointer',
+      padding: '10px 20px',
+      borderRadius: '8px',
+      border: '1px #4183CF solid', // Border around the section
+      overflow: 'hidden', // Ensures the rounded corners are respected
+      justifyContent: 'center',
+  }} onClick={() => alert('Google Sign-In Clicked')}>
+    <img src={GoogleIcon} alt="Google Icon" style={{ width: '20px', height: '20px' }} />
+    <div style={{
+        color: '#4183CF',
+        fontSize: '14px',
+        fontFamily: 'Inter',
+        fontWeight: 500,
+        lineHeight: '21px',
+        wordWrap: 'break-word'
+    }}>
+        Continue with Google
+    </div>
+  </div>
+</div>
+
+
             </div>
         </div>
     );
