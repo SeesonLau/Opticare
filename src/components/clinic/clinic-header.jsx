@@ -1,5 +1,5 @@
 import React from 'react';
-import '../styles/patient-header.css';
+import '../styles/clinic-header.css';
 
 const Header = ({ title }) => {
   return (
