@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import Calendar from 'react-calendar';
 import 'react-calendar/dist/Calendar.css';
-import '../../styles/patient-home.css';
+import '../../styles/patient/patient-home.css';
 import Textbox from '../patientprofile-textbox.jsx';
 import { MdAccountCircle } from "react-icons/md"; 
 import SaveButton from '../savebutton.jsx';
@@ -67,13 +67,12 @@ const PatientHomePage = () => {
 
 
   return (
-    <div className="main-container">
-      
-      
+    <div className="home-container">
+        
       <div className="content-wrapper">
         {/* Left Section - Content */}
         <div className="content">
-          <h1 className="main-text">Welcome!</h1>
+          <h1 className="home-title">Welcome!</h1>
 
         {/* Profile Card */}
         <div className="main-card">

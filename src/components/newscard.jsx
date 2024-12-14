@@ -1,5 +1,5 @@
     import React, { useState, useEffect } from 'react';
-    import '../styles/patient-home.css';
+    import '../styles/patient/patient-home.css';
 
     const NewsCard = () => {
     const [articles, setArticles] = useState([]); 

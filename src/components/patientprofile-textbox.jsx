@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import '../styles/patient-profile.css';
+import '../styles/patient/patient-profile.css';
 
 const Textbox = ({ label, value, onChange }) => {
   return (
