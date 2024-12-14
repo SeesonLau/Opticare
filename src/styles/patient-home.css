@@ -137,7 +137,7 @@ font-weight: 600;
 .textbox-container {
   display: flex;
   flex-direction: column;
-  gap: 35px; 
+  gap: 45 px; 
   width: 100%;
 }
 
@@ -148,11 +148,6 @@ font-weight: 600;
   width: 100%;
 }
 
-.textbox-center {
-  display: flex;
-  justify-content: center; 
-  margin-left: -90px;
-}
 
 /* Right Section - Separate content */
 .calendar-card {
@@ -234,47 +229,6 @@ height: 217.116px;
   flex-direction: column;
   align-items: center;
   gap: 10px; /* Space between title and image */
-}
-
-.user-container {
-  width: 9rem; /* 36 * 0.25rem = 9rem */
-  height: 3.5625rem; /* 57px */
-  position: absolute;  /* To position relative to .content-right */
-  right: 0;  /* Aligns it to the right edge of .content-right */
-  top: 0;  /* Keeps it at the top */
-  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
-
-}
-
-.user-box {
-  width: 9rem; /* Same as parent container */
-  height: 3.5625rem; /* 57px */
-  position: absolute;
-  left: 0;
-  top: 0;
-  background-color: white;
-  border-radius: 10px;
-  border: 1px solid #238ccd;
-}
-
-.user-photo {
-  width: 2.8125rem; /* 45px */
-  height: 2.8125rem; /* 45px */
-  position: absolute;
-  left: 1rem; /* 16px */
-  top: 0.375rem; /* 6px */
-  background-color: #aed3ff;
-  border-radius: 50%; 
-}
-
-.user-text {
-  position: absolute;
-  left: 5rem; /* 80px */
-  top: 1.125rem; /* 18px */
-  color: #3871c1;
-  font-size: 1.125rem; /* 18px */
-  font-weight: 600;
-  font-family: 'Montserrat', sans-serif;
 }
 
 .saveButton {
