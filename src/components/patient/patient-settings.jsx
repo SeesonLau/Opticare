@@ -1,8 +1,12 @@
 import React, { useState } from 'react';
 import '../../styles/settings.css';
+import Textbox from '../patientprofile-textbox.jsx';
+import { MdAccountCircle } from "react-icons/md"; 
 
 const Settings = () => {
   const [activeComponent, setActiveComponent] = useState('profile'); 
+
+  const profileImageUrl = null;  // Fetched URL or null for fallback
 
   const handleComponentChange = (component) => {
     setActiveComponent(component); // Updates the active component
@@ -34,11 +38,43 @@ const Settings = () => {
   };
 
 
-  const Profile = () => <div>Profile Settings</div>;
-  const AccountSecurity = () => <div>Account Security Settings</div>;
-  const Help = () => <div>Help Section</div>;
-  const Privacy = () => <div>Privacy Settings</div>;
-  const About = () => <div>About Information</div>;
+  const Profile = () => (
+    <div className="sub-container">
+      <div className="profile-photo">
+        {profileImageUrl ? (
+           <img src={profileImageUrl} alt="Profile" />
+          ) : (
+          <MdAccountCircle className="profileicon" /> // Display the MdAccountCircle icon when no image is available
+           )}
+           </div>
+    </div>
+  );
+  
+  const AccountSecurity = () => (
+    <div className="sub-container">
+    <div>
+      Account Security Settings
+    </div>
+    </div>
+  );
+  
+  const Help = () => (
+    <div>
+      Help Section
+    </div>
+  );
+  
+  const Privacy = () => (
+    <div>
+      Privacy Settings
+    </div>
+  );
+  
+  const About = () => (
+    <div>
+      About Information
+    </div>
+  );
 
   return (
     <div className="settings-container">
