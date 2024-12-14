@@ -1,51 +1,42 @@
-import React from 'react';
-import '../styles/patient/navigationbar.css';
+import React from "react";
+import '../../styles/clinic/navigationbar.css';
+import { FaHome, FaCalendarAlt, FaSearch, FaHospitalUser, FaCog, FaSignOutAlt } from 'react-icons/fa'; // Import React Icons
+import { GiHealthNormal } from "react-icons/gi";
+import OptiCareLogo from '../../image/OptiCareLogo.png'
 
-const ClinicNavBar = () => {
-  // Define functions for each button (optional for now)
-  const handleHomeClick = () => {};
 
-  const handleProfileClick = () => {};
-
-  const handleAppointmentsClick = () => {};
-
-  const handleSearchClick = () => {
-    console.log("Search button clicked");
-    // Add functionality for Search button
-  };
-
-  const handleSettingsClick = () => {
-    console.log("Settings button clicked");
-    // Add functionality for Settings button
-  };
-
-  const handleLogOutClick = () => {
-    console.log("Log Out button clicked");
-    // Add functionality for Log Out button
-  };
-
+const ClinicNavBar = ({ onComponentChange }) => {
   return (
     <div className="navbar">
-      <img className="OpticareLogo21" src="/image/OptiCare LOGO2.png" alt="OptiCare Logo" />
-  
-      <button className="home" onClick={handleHomeClick}>
-        <img src="image/home.png" alt="Home" className="icon" />
+      <img 
+        src={OptiCareLogo} 
+        alt="OptiCare Logo" 
+        className="navbar-logo" 
+      />
+
+      <button className="dashboard" onClick={() => onComponentChange('dashboard')}>
+        <FaHome className="icon" />
+        <span className="button-text">Dashboard</span>
       </button>
-     
-      <button className="appointments" onClick={handleAppointmentsClick}>
-        <img src="../image/calendar.png" alt="Appointments" className="icon" />
+
+      <button className="appointments" onClick={() => onComponentChange('appointments')}>
+        <FaCalendarAlt className="icon" />
+        <span className="button-text">Appointments</span>
       </button>
-      <button className="search" onClick={handleSearchClick} aria-label="Search">
-        <img src="../image/search.png" alt="Search" className="icon" />
+
+      <button className="patient" aria-label="Patient" onClick={() => onComponentChange('patient')}>
+        <GiHealthNormal className="icon" />
+        <span className="button-text">Patient</span>
       </button>
-      <button className="health-records" onClick={handleSearchClick} aria-label="Health Records">
-        <img src="../image/health-records.png" alt="Health Records" className="icon" />
+
+      <button className="settings" aria-label="Settings" onClick={() => onComponentChange('settings')}>
+        <FaCog className="icon" />
+        <span className="button-text">Settings</span>
       </button>
-      <button className="settings" onClick={handleSettingsClick} aria-label="Settings">
-        <img src="../image/settings.png" alt="Settings" className="icon" />
-      </button>
-      <button className="logOut" onClick={handleLogOutClick} aria-label="Log Out">
-        <img src="../image/logout.png" alt="Log Out" className="icon" />
+
+      <button className="logOut" aria-label="Log Out" onClick={() => onComponentChange('logout')}>
+        <FaSignOutAlt className="icon" />
+        <span className="button-text">Logout</span>
       </button>
     </div>
   );
