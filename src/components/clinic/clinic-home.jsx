@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import '../../styles/patient/patient-home.css';
+
 import Calendar from 'react-calendar';
 import 'react-calendar/dist/Calendar.css'; // Import default styles for react-calendar
 import '../../styles/clinic/calendar-style.css';

@@ -5,6 +5,7 @@ import '../../styles/patient-home.css';
 import Textbox from '../patientprofile-textbox.jsx';
 import { MdAccountCircle } from "react-icons/md"; 
 import SaveButton from '../savebutton.jsx';
+import NewsCard from '../newscard.jsx';
 
 const PatientHomePage = () => {
   const [date, setDate] = useState(new Date());
@@ -169,7 +170,7 @@ const PatientHomePage = () => {
         {/* Article  */}
           <div className="article-card">
             <div className="card-content">
-              {/* Content for card 2 */}
+              <NewsCard />
             </div>
           </div>
         </div>
