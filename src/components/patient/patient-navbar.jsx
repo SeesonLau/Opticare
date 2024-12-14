@@ -16,7 +16,7 @@ const PatientNavBar = ({ onComponentChange }) => {
       </button>
       <button className="health-records" onClick={() => onComponentChange('patient-records')} aria-label="Health Records">
         <FaHospitalUser className="icon" />
-        <span className="button-text">Records</span>
+        <span className="button-text">EHR</span>
       </button>
       <button className="appointments" onClick={() => onComponentChange('patient-appointments')}>
         <FaCalendarAlt className="icon" />

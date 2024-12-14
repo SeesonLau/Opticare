@@ -1,10 +1,11 @@
 import React, { useState } from 'react';
 import Calendar from 'react-calendar';
 import 'react-calendar/dist/Calendar.css';
-import '../../styles/patient-home.css';
+import '../../styles/patient/patient-home.css';
 import Textbox from '../patientprofile-textbox.jsx';
 import { MdAccountCircle } from "react-icons/md"; 
 import SaveButton from '../savebutton.jsx';
+import NewsCard from '../newscard.jsx';
 
 const PatientHomePage = () => {
   const [date, setDate] = useState(new Date());
@@ -14,13 +15,15 @@ const PatientHomePage = () => {
   const [firstname, setFirstname] = useState(''); 
   const [lastname, setLastname] = useState(''); 
 
-  const [gender, setGender] = useState('');
+  const [sex, setSex] = useState('');
+  const [birthdate, setBirthdate] = useState('');
 
   const [address, setAddress] = useState('');
-  const [birthday, setBirthday] = useState('');
+  const [age, setAge] = useState('');
 
-  const [phonenumber, setPhonenumber] = useState('');
   const [email, setEmail] = useState('');
+  const [phonenumber, setPhonenumber] = useState('');
+ 
 
   const handleSave = () => {
     //Logic for saving profile
@@ -35,18 +38,26 @@ const PatientHomePage = () => {
   };
 
   const handleChange3 = (e) => {
-    setGender(e.target.value);
+    setSex(e.target.value);
   };
 
   const handleChange4 = (e) => {
-    setAddress(e.target.value);
+    setBirthdate(e.target.value);
   };
 
   const handleChange5 = (e) => {
-    setBirthday(e.target.value);
+    setAddress(e.target.value);
   };
 
   const handleChange6 = (e) => {
+    setAge(e.target.value);
+  };
+
+  const handleChange7 = (e) => {
+    setEmail(e.target.value);
+  };
+
+  const handleChange8 = (e) => {
     const value = e.target.value;
     // Allow only digits and limit to 11 characters
     if (/^\d{0,11}$/.test(value)) {
@@ -54,18 +65,14 @@ const PatientHomePage = () => {
     }
   };
 
-  const handleChange7 = (e) => {
-    setEmail(e.target.value);
-  };
 
   return (
-    <div className="main-container">
-      
-      
+    <div className="home-container">
+        
       <div className="content-wrapper">
         {/* Left Section - Content */}
         <div className="content">
-          <h1 className="main-text">Welcome!</h1>
+          <h1 className="home-title">Welcome!</h1>
 
         {/* Profile Card */}
         <div className="main-card">
@@ -106,41 +113,49 @@ const PatientHomePage = () => {
       />
     </div>
     
-    {/* Gender */}
-    <div className="textbox-center">
+    {/* Sex and  Birthdate */}
+    <div className="textbox-row">
       <Textbox 
-        label="Gender" 
-        value={gender} 
+        label="Sex" 
+        value={sex} 
         onChange={handleChange3} 
+      />
+      <Textbox 
+        label="Birthdate" 
+        value={birthdate} 
+        onChange={handleChange4} 
       />
     </div>
     
-    {/* Second row: Address and Birthday */}
+    
+    {/* Address and Age */}
     <div className="textbox-row">
       <Textbox 
         label="Address" 
         value={address} 
-        onChange={handleChange4} 
+        onChange={handleChange5} 
       />
       <Textbox 
-        label="Birthday" 
-        value={birthday} 
-        onChange={handleChange5} 
+        label="Age" 
+        value={age} 
+        onChange={handleChange6} 
       />
     </div>
     
     {/* Third row: Phonenumber and Email */}
     <div className="textbox-row">
-      <Textbox 
-        label="Phone Number" 
-        value={phonenumber} 
-        onChange={handleChange6} 
-      />
-      <Textbox 
+    <Textbox 
         label="Email" 
         value={email} 
         onChange={handleChange7} 
       />
+
+      <Textbox 
+        label="Phone Number" 
+        value={phonenumber} 
+        onChange={handleChange8} 
+      />
+
           </div>
         </div>
         </div>
@@ -148,12 +163,6 @@ const PatientHomePage = () => {
 
         {/* Right Section - Separate Content */}
         <div className="content-right">
-          <div className="user-container">
-            <div className="user-box"></div>
-            <div className="user-photo"></div>
-            <div className="user-text">User</div>
-            </div>
-
               {/* Calendar  */}
             <div className="calendar-card">
             <h1 className="calendar-text">Calendar</h1>
@@ -169,7 +178,7 @@ const PatientHomePage = () => {
         {/* Article  */}
           <div className="article-card">
             <div className="card-content">
-              {/* Content for card 2 */}
+              <NewsCard />
             </div>
           </div>
         </div>

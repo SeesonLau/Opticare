@@ -1,9 +1,8 @@
 import React, { useState } from 'react';
 import PatientNavBar from './patient-navbar.jsx';
-import '../../styles/patient/patient-home.css';
 import PatientHome from './patient-home.jsx';
 import PatientAppointments from './patient-appointments.jsx';
-import Settings from '../settings.jsx';
+import Settings from './patient-settings.jsx';
 import PatientSearch from './patient-search.jsx';
 import PatientRecords from './patient-records.jsx';
 
