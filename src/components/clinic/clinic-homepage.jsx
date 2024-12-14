@@ -1,5 +1,4 @@
 import React from 'react';
-
 import ClinicHome from './clinic-home.jsx';
 import ClinicProfile from './clinic-profile.jsx';
 import { Routes, Route } from 'react-router-dom';
