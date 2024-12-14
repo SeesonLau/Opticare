@@ -1,5 +1,5 @@
 import React from 'react';
-import PatientNavBar from '../patient/patient-navbar.jsx';
+
 import ClinicHome from './clinic-home.jsx';
 import ClinicProfile from './clinic-profile.jsx';
 import { Routes, Route } from 'react-router-dom';
