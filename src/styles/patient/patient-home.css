@@ -1,14 +1,15 @@
 
 .home-container {
   display: flex;
+  
   justify-content: flex-start;
   align-items: flex-start;
   padding: 20px;
   width: 100%;
   height: 100vh;
   box-sizing: border-box;
-  background: #F1F1FF;
-  
+  background: var(--Color-Blue-Blue-100, #E0EFF9);
+
 }
 
 .home-title  {
@@ -80,8 +81,8 @@
 }
 
 .profile-photo img {
-  width: 150px;
-  height: 150px;
+  width: 200px;
+  height: 200px;
   border-radius: 50%;
   object-fit: cover;
 }
@@ -90,6 +91,12 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
+}
+
+.profileicon
+{
+  width: 200px;
+  height: 200px;
 }
 
 .profile-name h2 {
@@ -136,7 +143,7 @@ font-weight: 600;
   line-height: 150%;
   margin-top: 18px;
   margin-left: 15px;
-  margin-bottom: 20px;
+  margin-bottom: 50px;
 }
 
 .textbox-container {
@@ -144,12 +151,13 @@ font-weight: 600;
   flex-direction: column;
   gap: 45px; 
   width: 100%;
+
 }
 
 .textbox-row {
   display: flex;
   justify-content: flex-start;
-  gap: 70px; 
+  gap: 20px; 
   width: 100%;
 }
 
@@ -236,36 +244,6 @@ height: 217.116px;
   gap: 10px; /* Space between title and image */
 }
 
-.saveButton {
-  display: flex;
-  width: 68px;
-  height: 22px;
-  justify-content: center;
-  align-items: center;
-  gap: 10px;
-  flex-shrink: 0;
-  border-radius: 5px;
-  background: linear-gradient(90deg, #3871C1 2.5%, #79339A 100%);
-  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
-  position: absolute;
-  bottom: 20px;
-  right: 20px; 
-  color: #FFF;
-  text-align: center;
-  font-family: Montserrat;
-  font-size: 12px;
-  font-style: normal;
-  font-weight: 700;
-  line-height: normal;
-  letter-spacing: 0.72px;
-}
 
-.saveButton:hover {
-  background: linear-gradient(90deg, #2e5e9c 2.5%, #6b2d6e 100%);
-}
-
-.saveButton:active {
-  box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.25); /* Slight change when clicked */
-}
 
 
