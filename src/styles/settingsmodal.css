@@ -1,0 +1,57 @@
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.2); /* Semi-transparent overlay */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000; /* Ensure it's above other content */
+    pointer-events: none; /* Prevent interactions with the overlay */
+}
+
+.modal-overlay.show {
+    pointer-events: auto; /* Allow interactions */
+}
+
+.modal-content {
+    width: 353px;
+    height: 374px;
+    border-radius: 20px;
+    border: 1px solid #000;
+    background: linear-gradient(180deg, #E1EFFF 0%, #4FBCFF 75.95%);
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25); /* Add shadow */
+    position: relative; /* Allow positioning of child elements */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center; /* Center contents */
+    padding: 20px; /* Inner padding */
+}
+
+.modal-title {
+    color: var(--Color-Blue-Blue-800, #325B9B);
+    font-family: Montserrat;
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 150%;
+    text-align: center; /* Center text horizontally */
+    width: 100%; /* Ensures full width alignment */
+}
+
+.modal-button {
+    display: flex;
+    width: 173px;
+    height: 26px;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    background-color: #3A8EF6;
+    color: #FFF;
+    border-radius: 15px;
+    border-color: #3A8EF6;
+    margin-top: 20px;
+}
