@@ -2,6 +2,7 @@ import React from 'react';
 import '../../styles/patient/navbar/patient-appointments.css'; 
 import '../../styles/appointments.css';
 
+
 const PatientAppointments = () => {
   return (
     <div className="appointments-container">
