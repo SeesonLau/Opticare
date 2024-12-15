@@ -4,8 +4,8 @@ import 'react-calendar/dist/Calendar.css';
 import '../../styles/patient/patient-home.css';
 import Textbox from '../patientprofile-textbox.jsx';
 import { MdAccountCircle } from "react-icons/md"; 
-import SaveButton from '../savebutton.jsx';
 import NewsCard from '../newscard.jsx';
+
 
 const PatientHomePage = () => {
   const [date, setDate] = useState(new Date());
@@ -25,9 +25,6 @@ const PatientHomePage = () => {
   const [phonenumber, setPhonenumber] = useState('');
  
 
-  const handleSave = () => {
-    //Logic for saving profile
-  };
 
   const handleChange1 = (e) => {
     setFirstname(e.target.value);
@@ -50,6 +47,7 @@ const PatientHomePage = () => {
   };
 
   const handleChange6 = (e) => {
+    
     setAge(e.target.value);
   };
 
@@ -95,7 +93,7 @@ const PatientHomePage = () => {
 
           {/* Profile  */}
           <div className="profile">
-          <SaveButton onClick={handleSave} />
+          
           <h1 className="profile-text">Profile</h1>
           <div className="textbox-container">
 
