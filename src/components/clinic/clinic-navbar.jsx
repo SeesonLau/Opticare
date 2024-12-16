@@ -1,6 +1,6 @@
 import React from "react";
 import '../../styles/clinic/navigationbar.css';
-import { FaHome, FaCalendarAlt, FaSearch, FaHospitalUser, FaCog, FaSignOutAlt } from 'react-icons/fa'; // Import React Icons
+import { FaHome, FaCalendarAlt, FaCog, FaSignOutAlt } from 'react-icons/fa'; // Import React Icons
 import { GiHealthNormal } from "react-icons/gi";
 import OptiCareLogo from '../../image/OptiCareLogo.png'
 

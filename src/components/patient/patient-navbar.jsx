@@ -1,5 +1,5 @@
 import React from 'react';
-import { FaHome, FaCalendarAlt, FaSearch, FaHospitalUser, FaCog, FaSignOutAlt } from 'react-icons/fa'; // Import React Icons
+import { FaHome, FaHospitalUser, FaCog, FaSignOutAlt } from 'react-icons/fa'; // Import React Icons
 import '../../styles/patient/navigationbar.css';
 import OptiCareLogo from '../../image/OptiCareLogo.png'
 import { auth } from '../../database/firebase.js'; // Import Firebase auth

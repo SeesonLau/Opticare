@@ -1,6 +1,6 @@
 import { initializeApp } from "firebase/app";
-import { getAnalytics } from "firebase/analytics";
-import { getDatabase } from "firebase/database";
+//import { getAnalytics } from "firebase/analytics";
+//import { getDatabase } from "firebase/database";
 import { getFirestore } from "firebase/firestore"; 
 import { getAuth, signInWithEmailAndPassword, createUserWithEmailAndPassword } from 'firebase/auth';
 
@@ -16,7 +16,7 @@ const firebaseConfig = {
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
-const analytics = getAnalytics(app);
+//const analytics = getAnalytics(app);
 export const auth = getAuth(app);
 
 export const signIn = (email, password) =>
@@ -25,7 +25,7 @@ export const register = (email, password) =>
   createUserWithEmailAndPassword(auth, email, password);
 
 // For Realtime Database
-const database = getDatabase(app);
+//const database = getDatabase(app);
 
 // Or for Firestore
 export const db = getFirestore(app);
