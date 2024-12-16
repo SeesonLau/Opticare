@@ -71,7 +71,6 @@ const Modal = ({ isOpen, onClose, title }) => {
     if (!isOpen) return null;
 
     return (
-<<<<<<< HEAD
         <div className="modal-overlay">
             <div className="modal-content">
                 <button
@@ -80,16 +79,8 @@ const Modal = ({ isOpen, onClose, title }) => {
                     aria-label="Close Modal"
                 >
                     <CloseIcon /> {/* Close icon */}
-=======
-        <div className="modal1-overlay">
-            <div className="modal1-content">
-                {/* Close Button */}
-                <button className="close-button" onClick={onClose} aria-label="Close Modal">
-                    <CloseIcon />
->>>>>>> 066fedb9a261de7b180ec022d5461272322f48ba
                 </button>
 
-<<<<<<< HEAD
                 {/* Logo and user type picker section */}
                 <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', marginBottom: '50px' }}>
                     {/* Logo image aligned at the top center */}
@@ -133,42 +124,15 @@ const Modal = ({ isOpen, onClose, title }) => {
                                 borderRadius: '7px',
                                 cursor: 'pointer',
                             }}
-=======
-                {/* Logo and User Type */}
-                <div className="logo-and-user-type">
-                    <img className="opticare-logo" src={OpticareLogo} alt="Opticare Logo" />
-                    <div className="login-message">
-                        <span className="blue-text">Login to&nbsp;</span>
-                        <span className="green-text">Optimize&nbsp;</span>
-                        <span className="blue-dark-text">Your Eye Care Journey</span>
-                    </div>
-
-                    <div className="user-type-picker">
-                        <button
-                            onClick={() => handleToggleUserType('Patient')}
-                            className={`user-type-button ${userType === 'Patient' ? 'active' : ''}`}
-                        >
-                            Patient
-                        </button>
-                        <button
-                            onClick={() => handleToggleUserType('Clinic')}
-                            className={`user-type-button ${userType === 'Clinic' ? 'active' : ''}`}
->>>>>>> 066fedb9a261de7b180ec022d5461272322f48ba
                         >
                             Clinic
                         </button>
                     </div>
                 </div>
 
-<<<<<<< HEAD
                 {/* Email Input Section */}
                 <div style={{ paddingLeft: '275px', marginTop: '-70px' }}> {/* Reduced marginTop for higher positioning */}
                     <div style={{ position: 'relative', display: 'flex', alignItems: 'right' }}>
-=======
-                {/* Email Input */}
-                <div className="email-input-section">
-                    <div className="input-wrapper">
->>>>>>> 066fedb9a261de7b180ec022d5461272322f48ba
                         <input
                             type="email"
                             value={email}
@@ -187,7 +151,6 @@ const Modal = ({ isOpen, onClose, title }) => {
                             }}
                         />
                         {email && (
-<<<<<<< HEAD
                             <button
                                 onClick={handleClearEmail}
                                 style={{
@@ -203,24 +166,14 @@ const Modal = ({ isOpen, onClose, title }) => {
                                 aria-label="Clear Email"
                             >
                                 &times; {/* X icon for clearing text */}
-=======
-                            <button className="clear-button" onClick={handleClearEmail} aria-label="Clear Email">
-                                &times;
->>>>>>> 066fedb9a261de7b180ec022d5461272322f48ba
                             </button>
                         )}
                     </div>
                 </div>
 
-<<<<<<< HEAD
                 {/* Password Input Section */}
                 <div style={{ paddingLeft: '275px', marginTop: '20px' }}>
                     <div style={{ position: 'relative', display: 'flex', alignItems: 'center' }}>
-=======
-                {/* Password Input */}
-                <div className="password-input-section">
-                    <div className="input-wrapper">
->>>>>>> 066fedb9a261de7b180ec022d5461272322f48ba
                         <input
                             type={showPassword ? 'text' : 'password'}
                             value={password}
@@ -241,7 +194,6 @@ const Modal = ({ isOpen, onClose, title }) => {
                         <button
                             className="toggle-password-button"
                             onClick={togglePasswordVisibility}
-<<<<<<< HEAD
                             style={{
                                 position: 'flex',
                                 left: '238px',
@@ -251,8 +203,6 @@ const Modal = ({ isOpen, onClose, title }) => {
                                 cursor: 'pointer',
                                 color: '#4F555A'
                             }}
-=======
->>>>>>> 066fedb9a261de7b180ec022d5461272322f48ba
                             aria-label="Toggle Password Visibility"
                         >
                             {showPassword ? <VisibilityOffIcon style={{ fontSize: '15px' }} /> : <VisibilityIcon style={{ fontSize: '15px' }} />}
@@ -260,7 +210,6 @@ const Modal = ({ isOpen, onClose, title }) => {
                     </div>
                 </div>
 
-<<<<<<< HEAD
                 {/* Sign In Button Section */}
                 <div style={{ display: 'flex', justifyContent: 'center', marginLeft: '15px', marginTop: '35px', position: 'relative' }}>
                     <div 
@@ -295,13 +244,8 @@ const Modal = ({ isOpen, onClose, title }) => {
                         }} 
                         onClick={handleButtonClick}  // Adds the same click event to the text
                     >
-=======
-                {/* Login Button */}
-                <div className="login-button-section">
-                    <button className="login-button" onClick={handleButtonClick}>
->>>>>>> 066fedb9a261de7b180ec022d5461272322f48ba
                         Login
-                    </button>
+                    </div>
                 </div>
 
                 {/* Google Sign-in Section */}
@@ -314,7 +258,6 @@ const Modal = ({ isOpen, onClose, title }) => {
                     >
                     </div>
                 </div>
-<<<<<<< HEAD
 
                 {/* "or" Separator Section */}
                 <div style={{ width: '280px', height: '100px', marginLeft: '260px', justifyContent: 'center', alignItems: 'center', gap: '24px', display: 'inline-flex', marginTop: '20px' }}>
@@ -351,15 +294,6 @@ const Modal = ({ isOpen, onClose, title }) => {
                         </div>
                     </div>
                 </div>
-=======
-                {/* Register Section */}
-                <div className="register-section">
-                    <span className="register-info">if you don’t have an account, </span>
-                    <span className="register-link" onClick={() => alert('Redirect to Register')}>
-                        Register Here!
-                    </span>
-                </div>
->>>>>>> 066fedb9a261de7b180ec022d5461272322f48ba
             </div>
         </div>
     );
