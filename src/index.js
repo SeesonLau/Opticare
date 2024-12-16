@@ -3,13 +3,14 @@ import { FaSignInAlt, FaUserPlus } from 'react-icons/fa';
 import ReactDOM from 'react-dom/client';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import './styles/index.css';
-
-import Modal from './components/modal.jsx'; // Ensure modal component is properly imported
+import Modal from './components/modal.jsx';
 import opticareLogo from './image/OptiCare LOGO2.png';
-
-import PatientHomePage from './components/patient/patient-homepage'; // route to patient-homepage.jsx
-import ClinicHomePage from './components/clinic/clinic-homepage'; // route to clinic-homepage.jsx
+import PatientHomePage from './components/patient/patient-homepage'; 
+import ClinicHomePage from './components/clinic/clinic-homepage'; 
 import reportWebVitals from './reportWebVitals';
+import Testimonials from './components/homepage/testimonials.jsx';
+import AboutUs from './components/homepage/aboutus.jsx';
+import OurTeam from './components/homepage/ourteam.jsx';
 
 const HomePage = () => {
   const [activeModal, setActiveModal] = useState(null);
@@ -26,14 +27,41 @@ const HomePage = () => {
     setActiveModal(null);
   };
 
+  // scrolling effect
+  const scrollToSection = (e, sectionId) => {
+    e.preventDefault(); 
+    const section = document.getElementById(sectionId);
+    if (section) {
+      section.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  };
+
   return (
     <div className="home-page-container">
-      {/* Header Section */}
+
       <header className="home-page-header">
         <div className="logo-section">
           <img src={opticareLogo} alt="OptiCare Logo" className="logo" />
           <h1 className="logo-title">Opticare</h1>
         </div>
+
+        <nav className="nav-links">
+          <a href="#home" onClick={(e) => scrollToSection(e, 'home')}>
+            Home
+          </a>
+          <a href="#testimonials" onClick={(e) => scrollToSection(e, 'testimonials')}>
+            Testimonials
+          </a>
+          <a href="#about" onClick={(e) => scrollToSection(e, 'about')}>
+            About
+          </a>
+          <a href="#team" onClick={(e) => scrollToSection(e, 'team')}>
+            Our Team
+          </a>
+          <a href="#contact" onClick={(e) => scrollToSection(e, 'contact')}>
+            Contact
+          </a>
+        </nav>
 
         {/* Buttons for larger screens */}
         <div className="auth-buttons">
@@ -63,31 +91,49 @@ const HomePage = () => {
       </header>
 
       {/* Hero Section */}
-      <section className="hero-section">
+      <section id="home" className="hero-section">
+        <div className="hero-overlay"></div> {/* Blue overlay */}
         <div className="hero-content">
-          <h2>Your Journey to Better Eye Care Starts Here</h2>
+          <h1>Your Path to a Clearer Vision, Starts Here.</h1>
+          <button className="hero-button">Log In</button>
         </div>
       </section>
 
+      {/* Testimonials Section */}
+      <section id="testimonials">
+        <Testimonials />
+      </section>
+
       {/* About Section */}
-      <section id="about" className="about-section">
-        <h2>About Us</h2>
-        <p>
-          Opticare connects patients and clinics with personalized eye care solutions.
-          From scheduling appointments to consulting with specialists, we aim to make eye care
-          seamless and accessible.
-        </p>
+      <section id="about">
+        <AboutUs />
+      </section>
+
+      {/* Our Team Section */}
+      <section id="team">
+        <OurTeam />
       </section>
 
       {/* Contact Section */}
       <section id="contact" className="contact-section">
-        <h2>Contact Us</h2>
-        <p>We’re here to help! Reach out through any of these channels:</p>
-        <ul>
-          <li>Email: seesonjohnlau@gmail.com</li>
-          <li>Phone: +63 998 168 6308</li>
-          <li>Address: Cebu City, Philippines</li>
-        </ul>
+        <div className="contact-container">
+          {/* Left Side: Logo and Phrase */}
+          <div className="contact-left">
+            <img src={opticareLogo} alt="OptiCare Logo" className="contact-logo" />
+            <h3 className="contact-phrase">Your Path to a Clearer Vision, Starts Here.</h3>
+          </div>
+
+          {/* Right Side: Contact Information */}
+          <div className="contact-right">
+            <h2>Contact Us</h2>
+            <p>We’re here to help! Reach out through any of these channels:</p>
+            <ul>
+              <li><strong>Email:</strong> seeson@gmail.com</li>
+              <li><strong>Phone:</strong> +63 998 468 6969</li>
+              <li><strong>Address:</strong> Cebu City, Philippines</li>
+            </ul>
+          </div>
+        </div>
       </section>
 
       {/* Modals */}

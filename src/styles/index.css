@@ -9,12 +9,7 @@ body {
   overflow-x: hidden; /* Prevent horizontal scrollbars */
 
   height: 100vh; /* Full viewport height */
-  background: linear-gradient(to bottom, 
-  #2C7D85 10%, 
-  #3B8F93 25%, 
-  #5C9F96 50%, 
-  #5D8C74 75%, 
-  #3B8F93 80%);
+  background: linear-gradient(to bottom, #42c0ff, #45c8de);
   background-size: 400% 400%; /* Make the gradient larger */
   position: relative;
   z-index: 1;
@@ -101,6 +96,7 @@ code {
 .logo-section {
   display: flex;
   align-items: center;
+  gap: 0.5rem;
 }
 
 .logo {
@@ -185,16 +181,62 @@ code {
   }
 }
 .hero-section {
-  height: 90vh;
+  position: relative;
+  height: 100vh; /* Full viewport height */
   display: flex;
   align-items: center;
   justify-content: center;
   text-align: center;
+  background: url('../image/optoimage.jpg') no-repeat center center/cover;
+}
+.hero-content {
+  position: relative;
+  z-index: 2; /* Bring text and buttons above the overlay */
+  color: white;
+}
+.hero-content h1 {
+  font-size: 3.5rem; /* Larger text size */
+  font-weight: bold;
+  margin-bottom: 1.5rem;
 }
 
-.hero-content h2 {
-  font-size: 2.5rem;
-  margin-bottom: 1rem;
+.hero-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 123, 255, 0.5); /* Semi-transparent blue overlay */
+  z-index: 1;
+}
+.hero-button {
+  padding: 1rem 2rem;
+  background-color: #28a745; /* Green button */
+  color: white;
+  border: none;
+  border-radius: 30px;
+  font-size: 1.2rem;
+  cursor: pointer;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease-in-out;
+}
+
+.hero-button:hover {
+  background-color: #218838; /* Darker green */
+  transform: scale(1.05);
+}
+.nav-links a {
+  text-decoration: none;
+  color: white;
+  font-weight: 500;
+  margin: 0 1rem;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.nav-links a:hover {
+  color: #28a745; /* Green color on hover */
+  transform: translateY(-2px);
 }
 
 /* Shared styles for scrollable sections */
@@ -257,39 +299,96 @@ code {
 
 /* Contact Section */
 .contact-section {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
   padding: 4rem 2rem;
-  text-align: center;
-  max-width: 800px;
-  margin: 0 auto;
-  height: 60vh; /* Increased height for the contact section */
-  color: white;
-  position: relative; /* Ensure the section can be adjusted with relative positioning */
-  margin-top: -3rem; /* Pull the "Contact Us" section upward by 3rem */
-  z-index: 1; /* Make sure it's above any other content */
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.contact-section h2 {
-  font-size: clamp(1.5rem, 5vw, 3rem); /* Dynamically scales text size */
+.contact-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  width: 100%;
+  gap: 2rem;
+}
+
+.contact-left, .contact-right {
+  flex: 1;
+}
+
+.contact-left {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Center-align the logo and phrase */
+  text-align: center;  /* Ensure the phrase is centered */
+}
+
+.contact-logo {
+  width: 150px;
+  height: auto;
   margin-bottom: 1rem;
 }
 
-.contact-section ul {
-  list-style: none;
+.contact-phrase {
+  font-size: 1.5rem;
+  color: #ffffff;
+  font-weight: bold;
+}
+
+.contact-right {
+  background: #ffffff;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  text-align: center; /* Center-align the text */
+}
+
+.contact-right h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: #0077b6;
+}
+
+.contact-right p {
+  margin-bottom: 1rem;
+  font-size: 1.2rem;
+  color: #555555;
+}
+
+.contact-right ul {
+  list-style-type: none;
   padding: 0;
 }
 
-.contact-section li {
+.contact-right li {
   margin-bottom: 0.5rem;
+  font-size: 1.1rem;
+  color: #333333;
 }
 
-.contact-section p {
-  font-size: clamp(1rem, 3vw, 1.5rem); /* Dynamically scales text size */
-  margin-bottom: 1.5rem;
+.contact-right li strong {
+  color: #0077b6;
 }
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .contact-container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .contact-left, .contact-right {
+    flex: unset;
+    width: 100%;
+  }
+
+  .contact-right {
+    margin-top: 2rem;
+  }
+}
+
 
 /* About Section */
 .about-section {
@@ -305,16 +404,3 @@ code {
   color: white;
 }
 
-/* Contact Section */
-.contact-section {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  padding: 4rem 2rem;
-  text-align: center;
-  max-width: 800px;
-  margin: 0 auto;
-  height: 60vh; /* Increased to 60% of the viewport height */
-  color: white;
-}
