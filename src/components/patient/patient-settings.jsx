@@ -43,12 +43,12 @@ const Settings = () => {
       // Logic for saving phone number
     }
 
-    const handleConfirmInquiry = () => {
-      // Logic for inquiry
-    }
-
     const handlePasswordSave = () => {
       // Logic for saving password
+    }
+
+    const handleConfirmInquiry = () => {
+      // Logic for inquiry
     }
 
 
