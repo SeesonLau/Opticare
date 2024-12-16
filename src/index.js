@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+
 import { FaSignInAlt, FaUserPlus } from 'react-icons/fa';
 import ReactDOM from 'react-dom/client';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
@@ -15,13 +17,18 @@ import OurTeam from './components/homepage/ourteam.jsx';
 
 const HomePage = () => {
   const [activeModal, setActiveModal] = useState(null);
-
+  const navigate = useNavigate();
   const handleRegisterClick = () => {
     setActiveModal('register');
   };
 
+  /*
   const handleLoginClick = () => {
     setActiveModal('login');
+  };
+  */
+  const handleLoginClick = () => {
+    navigate('/patient-homepage');
   };
 
   const handleCloseModal = () => {
