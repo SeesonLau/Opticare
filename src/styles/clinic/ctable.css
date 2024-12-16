@@ -1,0 +1,93 @@
+.patient-table-container {
+    width: 95%;
+    margin: 20px auto;
+    padding: 10px;
+    background-color: #f4f9ff;
+    border-radius: 15px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    overflow: hidden
+  }
+  
+  .table-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+  
+  .search-input {
+    padding: 8px;
+    width: 200px;
+    border: 1px solid #d1e3f8;
+    border-radius: 4px;
+  }
+  
+  .records-found {
+    font-size: 0.9em;
+    color: #666;
+  }
+  
+  .patient-table {
+    width: 100%;
+    border-collapse: collapse;
+    table-layout: fixed; 
+  }
+  
+  .patient-table th,
+  .patient-table td {
+    text-align: center;
+    padding: 12px;
+    border: 1px solid #d1e3f8;
+    color: #666; /* Lighter text for both header and body */
+    white-space: nowrap;
+  }
+  
+  .patient-table th {
+    background-color: #e7f0fb;
+    font-weight: normal; /* Remove bold effect */
+  }
+  
+  .patient-table tr:nth-child(even) {
+    background-color: #edf5ff;
+  }
+  
+  /* Thinner Patient ID column */
+  .patient-table th:first-child,
+  .patient-table td:first-child {
+    width: 8%; /* Adjust column width to make it thinner */
+  }
+  
+  .actions svg {
+    margin: 0 8px;
+    cursor: pointer;
+    color: #666; /* Lighter text for icons */
+    transition: color 0.2s;
+  }
+  
+  .actions svg:hover {
+    color: #007bff;
+  }
+  
+  /* Hide scrollbars */
+.patient-table-container::-webkit-scrollbar {
+    display: none; /* Chrome, Safari, Edge */
+  }
+  
+  .patient-table-container {
+    -ms-overflow-style: none; /* Internet Explorer */
+    scrollbar-width: none; /* Firefox */
+  }
+
+  .icon-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 5px;
+    font-size: 1em;
+    color: #333; /* Default icon color */
+    transition: color 0.2s;
+  }
+  
+  .icon-button:hover {
+    color: #007bff; /* Highlight color on hover */
+  }

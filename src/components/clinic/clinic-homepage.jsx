@@ -1,40 +1,25 @@
-import React, { useState } from 'react';
-import ClinicNavBar from '../clinic/clinic-navbar.jsx';
-import '../../styles/clinic/clinic-home.css';
-
-import ClinicHome from './clinic-home.jsx';
-import ClinicAppointments from './clinic-appointments.jsx'; // Import ClinicAppointments
-import ClinicPatient from './clinic-patient.jsx'; // Import ClinicPatient
-import ClinicSettings from './clinic-settings.jsx'; // Import ClinicAppointments
-
-
-
+import React from "react";
+import ClinicNavbar from "./clinic-navbar";
+import PatientTable from "./clinic-table";
+import "../../styles/clinic/chome.css";
 
 const ClinicHomePage = () => {
-  const [activeComponent, setActiveComponent] = useState('dashboard'); // State to track which component to show
-
-  const handleComponentChange = (component) => {
-    setActiveComponent(component); // Update active component
+    return (
+        <div className="clinic-homepage-container">
+          {/* Left Side - Navbar */}
+          <div className="clinic-navbar">
+            <ClinicNavbar />
+          </div>
+    
+          {/* Right Side - Content */}
+          <div className="clinic-content">
+            <h1 className="welcome-title">Welcome!</h1>
+            <div className="patient-table-wrapper">
+              <PatientTable />
+            </div>
+          </div>
+        </div>
+    );
   };
-
-  return (
-    <div>
-      {/* Navigation Bar */}
-      <ClinicNavBar onComponentChange={handleComponentChange} />
-
-      {/* Main Content */}
-      <div className="main-content">
-        {activeComponent === 'dashboard' && <ClinicHome />} {/* Show ClinicHome */}
-        {activeComponent === 'appointments' && <ClinicAppointments />} {/* Show ClinicAppointments */}
-        {activeComponent === 'patient' && <ClinicPatient />} {/* Show ClinicPatient */}
-        {activeComponent === 'settings' && <ClinicSettings />} {/* Show ClinicSettings */}
-
-
-
-
-      </div>
-    </div>
-  );
-};
-
-export default ClinicHomePage;
+  
+  export default ClinicHomePage;

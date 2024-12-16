@@ -1,0 +1,31 @@
+.clinic-homepage-container {
+    display: flex;
+    height: 100vh; /* Full height of the viewport */
+    background-color: #f0f4fa;
+    font-family: Arial, sans-serif;
+    padding-left: 350px;
+  }
+  
+
+  .clinic-content {
+    flex: 1; /* Takes up remaining space */
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .welcome-title {
+    font-size: 1.8em;
+    color: #333;
+    margin-bottom: 20px;
+  }
+  
+  .patient-table-wrapper {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    overflow-y: auto;
+    height: calc(100% - 60px); /* Adjust height */
+  }
+  
