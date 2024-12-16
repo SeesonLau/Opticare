@@ -45,6 +45,7 @@ const teamMembers = [
   
     return (
       <section id="team" className="ourteam-section">
+        <div className="ourteam-overlay"></div>
         <h2 className="team-heading">Our Team</h2>
         <p className="team-subheading">
           Meet the passionate team behind OptiCare, dedicated to revolutionizing
