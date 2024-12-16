@@ -6,9 +6,7 @@ import Textbox from "../patientprofile-textbox.jsx";
 import { MdAccountCircle } from "react-icons/md";
 import NewsCard from "../newscard.jsx";
 import PatientNavBar from "./patient-navbar.jsx";
-import PatientAppointments from "./patient-appointments.jsx";
 import Settings from "./patient-settings.jsx";
-import PatientSearch from "./patient-search.jsx";
 import PatientRecords from "./patient-records.jsx";
 import { db } from "../../database/firebase.js";
 import { doc, getDoc } from "firebase/firestore";
@@ -24,7 +22,7 @@ const PatientHomePage = () => {
         address: "",
         age: "",
         email: "",
-        phonenumber: "",
+        phoneNumber: "",
     });
     const profileImageUrl = null; // Placeholder photo (fallback)
 
@@ -121,8 +119,6 @@ const PatientHomePage = () => {
             <div className="main-content">
                 {activeComponent === "dashboard" && renderDashboard()}
                 {activeComponent === "patient-records" && <PatientRecords />}
-                {activeComponent === "patient-appointments" && <PatientAppointments />}
-                {activeComponent === "patient-search" && <PatientSearch />}
                 {activeComponent === "settings" && <Settings />}
             </div>
         </div>
