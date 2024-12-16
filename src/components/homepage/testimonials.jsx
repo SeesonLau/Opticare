@@ -50,6 +50,7 @@ const testimonials = [
   
     return (
         <section id="testimonials" className="testimonials">
+        <div className="testimonials-overlay"></div>
           <div className="testimonials-header">
             <h2 className="testimonials-title">Testimonials</h2>
             <p className="testimonials-subtitle">

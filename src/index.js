@@ -116,13 +116,24 @@ const HomePage = () => {
 
       {/* Contact Section */}
       <section id="contact" className="contact-section">
-        <h2>Contact Us</h2>
-        <p>We’re here to help! Reach out through any of these channels:</p>
-        <ul>
-          <li>Email: seesonjohnlau@gmail.com</li>
-          <li>Phone: +63 998 168 6308</li>
-          <li>Address: Cebu City, Philippines</li>
-        </ul>
+        <div className="contact-container">
+          {/* Left Side: Logo and Phrase */}
+          <div className="contact-left">
+            <img src={opticareLogo} alt="OptiCare Logo" className="contact-logo" />
+            <h3 className="contact-phrase">Your Path to a Clearer Vision, Starts Here.</h3>
+          </div>
+
+          {/* Right Side: Contact Information */}
+          <div className="contact-right">
+            <h2>Contact Us</h2>
+            <p>We’re here to help! Reach out through any of these channels:</p>
+            <ul>
+              <li><strong>Email:</strong> seeson@gmail.com</li>
+              <li><strong>Phone:</strong> +63 998 468 6969</li>
+              <li><strong>Address:</strong> Cebu City, Philippines</li>
+            </ul>
+          </div>
+        </div>
       </section>
 
       {/* Modals */}
