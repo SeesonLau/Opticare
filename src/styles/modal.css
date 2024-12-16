@@ -13,7 +13,7 @@
 }
 
 .modal-content {
-  width: 800px; /* Modal width */
+  width: 1px; /* Modal width */
   height: 550px; /* Modal height */
   background: #C8E3F5; /* Light blue modal background */
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25); /* Add shadow */
@@ -23,7 +23,7 @@
   pointer-events: auto; /* Enable interaction with modal content */
 }
 
-.close-button {
+.close-button { 
   background: transparent; /* No background */
   border: none; /* No border */
   cursor: pointer; /* Pointer cursor on hover */
