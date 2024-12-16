@@ -34,3 +34,19 @@
     color: var(--Color-Blue-Blue-500, #559DDC);  
     margin-left: 80px;
   }
+
+  .textbox-container {
+    display: flex;
+    flex-direction: column;
+    gap: 45px; 
+    width: 100%;
+  
+  }
+  
+  .textbox-row {
+    display: flex;
+    justify-content: flex-start;
+    gap: 20px; 
+    width: 100%;
+  }
+  
