@@ -8,7 +8,6 @@ import ClinicPatient from './clinic-patient.jsx'; // Import ClinicPatient
 import ClinicSettings from './clinic-settings.jsx'; // Import ClinicAppointments
 
 
-import { Routes, Route } from 'react-router-dom';
 
 
 const ClinicHomePage = () => {

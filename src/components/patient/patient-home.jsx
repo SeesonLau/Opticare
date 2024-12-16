@@ -66,7 +66,6 @@ const PatientHomePage = () => {
 
   return (
     <div className="home-container">
-        
       <div className="content-wrapper">
         {/* Left Section - Content */}
         <div className="content">
