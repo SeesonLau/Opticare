@@ -173,12 +173,13 @@ const PatientHomePage = () => {
         </div>
       </div>
 
-        {/* Article  */}
+          {/* Article  */}
           <div className="article-card">
             <div className="card-content">
               <NewsCard />
             </div>
           </div>
+
         </div>
       </div>
     </div>
