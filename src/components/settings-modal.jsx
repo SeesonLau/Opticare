@@ -21,8 +21,8 @@ export const ProfileSaveButton = ({ onClick }) => {
       </button>
 
       {isVisible && (
-        <div className="modal-overlay">
-          <div className="modal-content">
+        <div className="modal-overlay-settings">
+          <div className="modal-content-settings">
             <h1 className="modal-title">Profile Saved</h1>
             <button className="modal-button" onClick={closeModal}>
               Done
@@ -54,9 +54,9 @@ export const EmailSaveButton = ({ onConfirm }) => {
 
       {isVisible && (
         <div className="modal-overlay">
-          <div className="modal-content">
-            <h1 className="modal-title">Email saved!</h1>
-            <button className="modal-button" onClick={closeModal}>
+          <div className="modal-content-settings">
+            <h1 className="modal-title-settings">Email saved!</h1>
+            <button className="modal-button-settings" onClick={closeModal}>
               Done
             </button>
           </div>
