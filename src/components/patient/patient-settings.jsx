@@ -1,33 +1,85 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import '../../styles/settings.css';
 import { MdAccountCircle } from "react-icons/md"; 
 import OptiCareLogoAbout from '../../image/OptiCareLogoAbout.png';
 import PasswordTextboxes from '../password-textbox.jsx';
+import { db } from "../../database/firebase.js";
+import { doc, getDoc, setDoc } from "firebase/firestore";
 
 const Settings = () => {
   const [activeComponent, setActiveComponent] = useState('profile'); 
 
-  const profileImageUrl = null; // Fetched URL or null for fallback
-
   const handleComponentChange = (component) => {
-    setActiveComponent(component); // Updates the active component
+    setActiveComponent(component); 
   };
 
-  const [firstname, setFirstname] = useState(''); 
-  const [lastname, setLastname] = useState(''); 
-  const [sex, setSex] = useState('');
-  const [birthdate, setBirthdate] = useState('');
-  const [address, setAddress] = useState('');
-  const [age, setAge] = useState('');
-  const [email, setEmail] = useState('');
+  // Fetch profile data from Firebase
+      useEffect(() => {
+          const fetchProfileData = async () => {
+              try {
+                  const docRef = doc(db, "patients", "patientId"); 
+                  const docSnap = await getDoc(docRef);
+  
+                  if (docSnap.exists()) {
+                      setProfileData(docSnap.data());
+                  } else {
+                      console.error("No such document!");
+                  }
+              } catch (error) {
+                  console.error("Error fetching patient data:", error);
+              }
+          };
+  
+          // Retrieve email from localStorage and update profileData
+          const userEmail = localStorage.getItem("userEmail");
+          if (userEmail) {
+              setProfileData((prevState) => ({
+                  ...prevState,
+                  email: userEmail, 
+              }));
+          }
+          fetchProfileData(); 
+      }, []); 
+
+  const [profileData, setProfileData] = useState({
+          firstname: "",
+          lastname: "",
+          sex: "",
+          birthdate: "",
+          address: "",
+          age: "",
+          email: "",
+          phoneNumber: "",
+      });
+  const [profileImageUrl, setProfileImageUrl] = useState(null);
+
+  const handleChange = (e) => {
+    const { name, value } = e.target; 
+    setProfileData((prevData) => ({
+        ...prevData,
+        [name]: value, 
+    }));
+  };
+
+  const handleProfileSave = async () => {
+    try {
+        const userId = "patientId"; 
+        const docRef = doc(db, "patients", userId);
+        await setDoc(docRef, {
+            ...profileData,
+            profileImageUrl, 
+        });
+        alert("Profile saved successfully!");
+    } catch (error) {
+        console.error("Error saving profile:", error);
+        alert("Error saving profile. Please try again.");
+    }
+  };
+
   const [phonenumber, setPhonenumber] = useState('');
-
-  const handleProfileSave = () => {
-    alert(`Profile saved successfully!\nFirstname: ${firstname}\nLastname: ${lastname}\nSex: ${sex}\nBirthdate: ${birthdate}\nAddress: ${address}\nAge: ${age}`);
-  };
-
+  
   const handleEmailSave = () => {
-    alert(`Email saved successfully!\nEmail: ${email}`);
+    alert(`Email saved successfully!\nEmail: ${profileData.email}`);
   };
 
   const handlePhonenumberSave = () => {
@@ -38,17 +90,6 @@ const Settings = () => {
     alert('Password changed successfully!');
   };
 
-  const handleConfirmInquiry = () => {
-    alert('Inquiry sent successfully!');
-  };
-
-  const handleChange1 = (e) => setFirstname(e.target.value);
-  const handleChange2 = (e) => setLastname(e.target.value);
-  const handleChange3 = (e) => setSex(e.target.value);
-  const handleChange4 = (e) => setBirthdate(e.target.value);
-  const handleChange5 = (e) => setAddress(e.target.value);
-  const handleChange6 = (e) => setAge(e.target.value);
-  const handleChange7 = (e) => setEmail(e.target.value);
   const handleChange8 = (e) => {
     const value = e.target.value;
     if (/^\d{0,11}$/.test(value)) {
@@ -80,26 +121,16 @@ const Settings = () => {
     );
   };
 
-  const ProfileTextbox = ({ label, value, onChange }) => (
+  const ProfileTextbox = ({ label, value, name, onChange }) => (
     <div className="profile-textbox">
       <label className="profile-textboxLabel">{label}</label>
       <input
         type="text"
         value={value}
+        name={name} 
         onChange={onChange}
         className="profile-textboxContent" 
       />
-    </div>
-  );
-
-  const InquiryTextbox = ({ value, onChange }) => (
-    <div className="helpheading-textbox">
-      <textarea
-        value={value}
-        onChange={onChange}
-        placeholder="Type here..."
-        className="helpheading-textboxContent"
-      ></textarea>
     </div>
   );
 
@@ -113,19 +144,67 @@ const Settings = () => {
         )}
       </div>
       <div className="textbox-container">
+        {/* Render input fields using ProfileTextbox */}
         <div className="textbox-row">
-          <ProfileTextbox label="Firstname" value={firstname} onChange={handleChange1} />
-          <ProfileTextbox label="Lastname" value={lastname} onChange={handleChange2} />
+          <ProfileTextbox
+            label="Firstname"
+            value={profileData.firstname}
+            name="firstname"
+            onChange={handleChange}
+          />
+          <ProfileTextbox
+            label="Lastname"
+            value={profileData.lastname}
+            name="lastname"
+            onChange={handleChange}
+          />
         </div>
         <div className="textbox-row">
-          <ProfileTextbox label="Sex" value={sex} onChange={handleChange3} />
-          <ProfileTextbox label="Birth-date" value={birthdate} onChange={handleChange4} />
+          <ProfileTextbox
+            label="Sex"
+            value={profileData.sex}
+            name="sex"
+            onChange={handleChange}
+          />
+          <ProfileTextbox
+            label="Birthdate"
+            value={profileData.birthdate}
+            name="birthdate"
+            onChange={handleChange}
+          />
         </div>
         <div className="textbox-row">
-          <ProfileTextbox label="Address" value={address} onChange={handleChange5} />
-          <ProfileTextbox label="Age" value={age} onChange={handleChange6} />
+          <ProfileTextbox
+            label="Address"
+            value={profileData.address}
+            name="address"
+            onChange={handleChange}
+          />
+          <ProfileTextbox
+            label="Age"
+            value={profileData.age}
+            name="age"
+            onChange={handleChange}
+          />
         </div>
-        <button onClick={handleProfileSave} className="save-button">Save Profile</button>
+        <div className="textbox-row">
+          <ProfileTextbox
+            label="Email"
+            value={profileData.email}
+            name="email"
+            onChange={handleChange}
+          />
+          <ProfileTextbox
+            label="Phone Number"
+            value={profileData.phoneNumber}
+            name="phoneNumber"
+            onChange={handleChange}
+          />
+        </div>
+        {/* Save Profile Button */}
+        <button onClick={handleProfileSave} className="save-button">
+          Save Profile
+        </button>
       </div>
     </div>
   );
@@ -135,7 +214,7 @@ const Settings = () => {
       <h2 className="account-title">Change Email and Phone No.</h2>
       <div className="textbox-container">
         <div className="textbox-row">
-          <ProfileTextbox label="Email" value={email} onChange={handleChange7} />
+          <ProfileTextbox label="Email" value={profileData.email} isDisplayOnly />
           <ProfileTextbox label="Phone Number" value={phonenumber} onChange={handleChange8} />
         </div>
         <div className="button-row">

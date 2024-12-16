@@ -10,10 +10,14 @@ import Settings from "./patient-settings.jsx";
 import PatientRecords from "./patient-records.jsx";
 import { db } from "../../database/firebase.js";
 import { doc, getDoc } from "firebase/firestore";
+import { getAuth } from "firebase/auth";
 
 const PatientHomePage = () => {
     const [activeComponent, setActiveComponent] = useState("dashboard");
     const [date, setDate] = useState(new Date());
+    const auth = getAuth();
+    const docRef = doc(db, "patients", "patientId");
+    const userID = auth.currentUser?.uid;
     const [profileData, setProfileData] = useState({
         firstname: "",
         lastname: "",
@@ -24,7 +28,7 @@ const PatientHomePage = () => {
         email: "",
         phoneNumber: "",
     });
-    const profileImageUrl = null; // Placeholder photo (fallback)
+    const profileImageUrl = null; 
 
     const handleComponentChange = (component) => {
         setActiveComponent(component);
@@ -32,10 +36,24 @@ const PatientHomePage = () => {
 
     // Fetch profile data from Firebase
     useEffect(() => {
-        // Fetch Firebase profile data (existing code)
         const fetchProfileData = async () => {
             try {
-                const docRef = doc(db, "patients", "patientId"); // Replace with actual patient ID
+                const auth = getAuth();
+                const userId = auth.currentUser?.uid; 
+
+                if (userId) {
+                    const docRef = doc(db, "patients", userId); 
+                    const docSnap = await getDoc(docRef); 
+                    if (docSnap.exists()) {
+                        setProfileData(docSnap.data());
+                    } else {
+                        console.error("No such document!");
+                    }
+                } else {
+                    console.error("No user is logged in!");
+                }
+
+                const docRef = doc(db, "patients", "patientId");
                 const docSnap = await getDoc(docRef);
 
                 if (docSnap.exists()) {
@@ -48,17 +66,15 @@ const PatientHomePage = () => {
             }
         };
 
-        // Retrieve email from localStorage and update profileData
         const userEmail = localStorage.getItem("userEmail");
         if (userEmail) {
             setProfileData((prevState) => ({
                 ...prevState,
-                email: userEmail, // Set email from Google Sign-In
+                email: userEmail, 
             }));
         }
-
-        fetchProfileData(); // Fetch Firebase profile data
-    }, []); // Empty dependency array to run on component mount
+        fetchProfileData(); 
+    }, []); 
 
     const renderDashboard = () => (
         <div className="home-container">
