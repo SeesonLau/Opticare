@@ -7,6 +7,8 @@ import { signOut } from 'firebase/auth';
 
 
 const PatientNavBar = ({ onComponentChange }) => {
+
+
   const handleLogout = async () => {
     try {
       await signOut(auth); // Sign out the user

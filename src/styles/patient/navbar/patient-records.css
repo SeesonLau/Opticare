@@ -3,9 +3,11 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: 100vh; /* Full height of the screen */
-  padding: 20px;
+  height: 95vh; /* Full height of the screen */
+  padding: 25px;
   background: var(--Color-Blue-Blue-100, #E0EFF9);
+  overflow: hidden;
+  padding-left: 300px;
 }
 
 .card-container {

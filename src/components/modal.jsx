@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect  } from 'react';
 import { useNavigate } from 'react-router-dom';
 import CloseIcon from '@mui/icons-material/Close';
 import VisibilityIcon from '@mui/icons-material/Visibility';
@@ -6,14 +6,52 @@ import VisibilityOffIcon from '@mui/icons-material/VisibilityOff';
 import '../styles/modal.css';
 import OpticareLogo from '../image/OptiCareLogo.png';
 import GoogleIcon from '../image/google.png';
+import { jwtDecode } from "jwt-decode";
 
 const Modal = ({ isOpen, onClose, title }) => {
+    const CLIENT_ID = "8792875923-oh2mkr0h90uqs0ir246n9lr6g51gc2g9.apps.googleusercontent.com";
+    const [isSignedIn, setIsSignedIn] = useState(false);
+    const navigate = useNavigate();
+
+    useEffect(() => {
+        /* Load Google Identity Services */
+        window.google.accounts.id.initialize({
+          client_id: CLIENT_ID,
+          callback: handleSignIn, // Callback function to handle the response
+        });
+      
+        /* Render the Google Sign-In button */
+        window.google.accounts.id.renderButton(
+          document.getElementById("google-signin-button"),
+          { theme: "outline", size: "large", text: "continue_with" }
+        );
+    }, []);
+    
+      const handleGoogleResponse = (response) => {
+        // The 'response' object contains the credential/token
+        console.log("Google Response:", response);
+        alert(`Token Received: ${response.credential}`);
+      };
+      const handleSignIn = (response) => {
+        const { credential } = response;
+    
+        // Decode the JWT to get user details
+        const googleUserData = jwtDecode(credential); // This will decode the JWT token
+    
+        const userEmail = googleUserData.email; // Extract email from decoded data
+        
+        // Store the email in localStorage
+        localStorage.setItem("googleAuthToken", credential);
+        localStorage.setItem("userEmail", userEmail);  // Save email in localStorage
+    
+        setIsSignedIn(true); // Update the sign-in status
+        navigate('/patient-homepage'); // Redirect to homepage
+    };
+    
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [showPassword, setShowPassword] = useState(false);
     const [userType, setUserType] = useState('Patient');
-
-    const navigate = useNavigate();
 
     const handleClearEmail = () => setEmail('');
     const togglePasswordVisibility = () => setShowPassword(!showPassword);
@@ -110,12 +148,18 @@ const Modal = ({ isOpen, onClose, title }) => {
                     </button>
                 </div>
 
-                {/* Google Sign-in */}
-                <div className="google-signin-section" onClick={() => alert('Google Sign-In Clicked')}>
+                {/* Google Sign-in Section */}
+                <div className="google-signin-section">
+                    <div id="google-signin-button"></div>
+                    {/* Optional custom design */}
+                    <div
+                    className="custom-google-signin"
+                    onClick={() => window.google.accounts.id.prompt()}
+                    >
                     <img src={GoogleIcon} alt="Google Icon" className="google-icon" />
                     <span className="google-signin-text">Continue with Google</span>
+                    </div>
                 </div>
-
                 {/* Register Section */}
                 <div className="register-section">
                     <span className="register-info">if you don’t have an account, </span>
