@@ -124,7 +124,7 @@ const Modal = ({ isOpen, onClose, title }) => {
                             <button
                                 onClick={handleClearEmail}
                                 style={{
-                                    position: 'absolute',
+                                    position: 'flex',
                                     left: '240px',
                                     top: '10px',
                                     border: 'none',
@@ -164,7 +164,7 @@ const Modal = ({ isOpen, onClose, title }) => {
                         <button
                             onClick={togglePasswordVisibility}
                             style={{
-                                position: 'absolute',
+                                position: 'flex',
                                 left: '238px',
                                 top: '10px',
                                 border: 'none',
@@ -185,7 +185,7 @@ const Modal = ({ isOpen, onClose, title }) => {
                         style={{
                             width: '250px',
                             height: '40px',
-                            position: 'absolute',
+                            position: 'flex',
                             background: 'linear-gradient(90deg, #4183CF 0%, #77B032 100%)',
                             boxShadow: '0px 11.851164817810059px 20.73953628540039px 3.950388193130493px rgba(68, 97, 242, 0.15)',
                             borderRadius: '20px',
@@ -197,7 +197,7 @@ const Modal = ({ isOpen, onClose, title }) => {
                     </div>
                     <div 
                         style={{
-                            position: 'absolute',
+                            position: 'flex',
                             left: '360px',
                             top: '-15px',
                             color: 'white',
