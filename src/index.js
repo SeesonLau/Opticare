@@ -66,9 +66,6 @@ const HomePage = () => {
 
         {/* Buttons for larger screens */}
         <div className="auth-buttons">
-          <button className="glass-button" onClick={handleLoginClick}>
-            Login
-          </button>
           <button className="glass-button" onClick={handleRegisterClick}>
             Register
           </button>
@@ -96,7 +93,7 @@ const HomePage = () => {
         <div className="hero-overlay"></div> {/* Blue overlay */}
         <div className="hero-content">
           <h1>Your Path to a Clearer Vision, Starts Here.</h1>
-          <button className="hero-button">Log In</button>
+          <button className="hero-button" onClick={handleLoginClick}>Log In</button>
         </div>
       </section>
 
