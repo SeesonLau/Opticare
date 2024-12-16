@@ -1,7 +1,7 @@
 .navbar {
     display: flex;
-    width: 282px;
-    height: 982px;
+    width: 320px;
+    height: 95vh; 
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
@@ -15,8 +15,8 @@
     left: 0;
     margin-top: 20px;
     margin-left: 20px;  
-   margin-bottom: 20px; 
-    
+    margin-bottom: 20px; 
+    overflow: hidden;
 }
 /* Remove underline from <Link> components in the navbar */
 .navbar-link {
