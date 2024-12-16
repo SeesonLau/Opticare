@@ -91,7 +91,16 @@ const Modal = ({ isOpen, onClose, title }) => {
                         {email && (
                             <button
                                 onClick={handleClearEmail}
-                                className="clear-button"
+                                style={{
+                                    position: 'absolute',
+                                    left: '240px',
+                                    top: '10px',
+                                    border: 'none',
+                                    background: 'transparent',
+                                    cursor: 'pointer',
+                                    color: '#4F555A',
+                                    fontSize: '15px'
+                                }}
                                 aria-label="Clear Email"
                             >
                                 &times;
@@ -111,7 +120,15 @@ const Modal = ({ isOpen, onClose, title }) => {
                         />
                         <button
                             onClick={togglePasswordVisibility}
-                            className="toggle-password-button"
+                            style={{
+                                position: 'absolute',
+                                left: '238px',
+                                top: '10px',
+                                border: 'none',
+                                background: 'transparent',
+                                cursor: 'pointer',
+                                color: '#4F555A'
+                            }}
                             aria-label="Toggle Password Visibility"
                         >
                             {showPassword ? <VisibilityOffIcon /> : <VisibilityIcon />}
@@ -119,15 +136,42 @@ const Modal = ({ isOpen, onClose, title }) => {
                     </div>
                 </div>
 
-                <div className="login-button-section" onClick={handleButtonClick}>
-                    <div className="login-button-background"></div>
-                    <div className="login-button-text">Login</div>
-                </div>
-
-                <div className="separator-section">
-                    <div className="line"></div>
-                    <div className="or-text">or</div>
-                    <div className="line"></div>
+                {/* Sign In Button Section */}
+                <div style={{ display: 'flex', justifyContent: 'center', marginLeft: '15px', marginTop: '35px', position: 'relative' }}>
+                    <div 
+                        style={{
+                            width: '250px',
+                            height: '40px',
+                            position: 'absolute',
+                            background: 'linear-gradient(90deg, #4183CF 0%, #77B032 100%)',
+                            boxShadow: '0px 11.851164817810059px 20.73953628540039px 3.950388193130493px rgba(68, 97, 242, 0.15)',
+                            borderRadius: '20px',
+                            cursor: 'pointer',
+                            zIndex: 1 // Ensures the background div is clickable
+                        }} 
+                        onClick={handleButtonClick}
+                    >
+                    </div>
+                    <div 
+                        style={{
+                            position: 'absolute',
+                            left: '360px',
+                            top: '-15px',
+                            color: 'white',
+                            fontSize: '17px',
+                            fontFamily: 'Montserrat',
+                            fontWeight: 700,
+                            lineHeight: '76.04px',
+                            letterSpacing: '1.53px',
+                            wordWrap: 'break-word',
+                            height: '100%',
+                            cursor: 'pointer',  // Makes the text itself clickable
+                            zIndex: 2 // Ensures the text is on top of the background
+                        }} 
+                        onClick={handleButtonClick}  // Adds the same click event to the text
+                    >
+                        Login
+                    </div>
                 </div>
 
                 <div className="google-signin-section" onClick={() => alert('Google Sign-In Clicked')}>

@@ -35,6 +35,8 @@
   height: 1024px;
   box-sizing: border-box;
   margin-left: 220px;
+  background: var(--Color-Blue-Blue-100, #E0EFF9);
+
 }
 
 .content {  

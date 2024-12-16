@@ -12,24 +12,24 @@
   pointer-events: none;
 }
 
-.modal1-content {
-  width: 800px;
-  height: 550px;
-  background: #C8E3F5;
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-  border-radius: 20px;
-  position: relative;
-  padding: 20px;
-  pointer-events: auto;
+.modal-content {
+  width: 800px; /* Modal width */
+  height: 550px; /* Modal height */
+  background: #C8E3F5; /* Light blue modal background */
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25); /* Add shadow */
+  border-radius: 20px; /* Rounded corners */
+  position: relative; /* Allow positioning of child elements */
+  padding: 20px; /* Inner padding */
+  pointer-events: auto; /* Enable interaction with modal content */
 }
 
 .close-button {
-  background: transparent;
-  border: none;
-  cursor: pointer;
-  position: absolute;
-  top: 10px;
-  right: 10px;
+  background: transparent; /* No background */
+  border: none; /* No border */
+  cursor: pointer; /* Pointer cursor on hover */
+  position: absolute; /* Position close button */
+  top: 10px; /* Adjust top position */
+  right: 10px; /* Adjust right position */
 }
 
 .close-button:hover {
