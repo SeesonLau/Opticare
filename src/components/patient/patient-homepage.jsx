@@ -32,9 +32,10 @@ const PatientHomePage = () => {
 
     // Fetch profile data from Firebase
     useEffect(() => {
+        // Fetch Firebase profile data (existing code)
         const fetchProfileData = async () => {
             try {
-                const docRef = doc(db, "patients", "patientId"); // Replace "patientId" with actual patient document ID
+                const docRef = doc(db, "patients", "patientId"); // Replace with actual patient ID
                 const docSnap = await getDoc(docRef);
 
                 if (docSnap.exists()) {
@@ -47,8 +48,17 @@ const PatientHomePage = () => {
             }
         };
 
-        fetchProfileData();
-    }, []);
+        // Retrieve email from localStorage and update profileData
+        const userEmail = localStorage.getItem("userEmail");
+        if (userEmail) {
+            setProfileData((prevState) => ({
+                ...prevState,
+                email: userEmail, // Set email from Google Sign-In
+            }));
+        }
+
+        fetchProfileData(); // Fetch Firebase profile data
+    }, []); // Empty dependency array to run on component mount
 
     const renderDashboard = () => (
         <div className="home-container">

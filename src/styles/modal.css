@@ -1,4 +1,9 @@
+<<<<<<< HEAD
 .modal-overlay {
+=======
+/* Modal Overlay */
+.modal1-overlay {
+>>>>>>> 066fedb9a261de7b180ec022d5461272322f48ba
   position: fixed;
   top: 0;
   left: 0;
@@ -8,6 +13,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+<<<<<<< HEAD
   z-index: 1000; /* Ensure it's above other content */
   pointer-events: none; /* Prevent interactions with the overlay */
 }
@@ -42,3 +48,144 @@
   padding-left: 100px; /* Add left padding */
   margin-bottom: 20px; /* Space below the image */
 }
+=======
+  z-index: 1000;
+}
+
+/* Modal Content */
+.modal1-content {
+  width: 800px;
+  background: #C8E3F5;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 20px;
+  position: relative;
+  padding: 30px;
+}
+
+/* Close Button */
+.close-button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+}
+
+/* Logo and User Type Picker */
+.logo-and-user-type {
+  text-align: center;
+}
+
+.opticare-logo {
+  width: 300px;
+}
+
+.user-type-picker {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.user-type-button {
+  padding: 10px 20px;
+  margin: 0 10px;
+  border: 1px solid #4461F2;
+  border-radius: 7px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.user-type-button.active {
+  background-color: #90DD2B;
+  color: white;
+}
+
+/* Input Fields */
+.input-wrapper {
+  position: relative;
+  margin: 10px auto;
+  width: 250px;
+}
+
+.input-field {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #667085;
+  border-radius: 5px;
+}
+
+.clear-button,
+.toggle-password-button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  color: #4F555A;
+}
+
+/* Login Button */
+.login-button-section {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.login-button {
+  width: 250px;
+  padding: 10px;
+  background: linear-gradient(90deg, #4183CF, #77B032);
+  color: white;
+  font-weight: bold;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.login-button:hover {
+  box-shadow: 0px 0px 10px rgba(68, 97, 242, 0.5);
+}
+
+/* Google Sign-In */
+.google-signin-section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 20px auto;
+  border: 1px solid #3871C1;
+  border-radius: 5px;
+  padding: 10px;
+  width: 250px;
+  cursor: pointer;
+}
+
+.google-signin-section:hover {
+  box-shadow: 0px 0px 10px rgba(33, 157, 233, 0.5);
+}
+
+.google-icon {
+  width: 20px;
+  margin-right: 10px;
+}
+
+.google-signin-text {
+  color: #3871C1;
+  font-weight: bold;
+}
+
+/* Register Section */
+.register-section {
+  text-align: center;
+  margin-top: 20px;
+  font-size: 12px;
+}
+
+.register-link {
+  color: #77B032;
+  font-weight: bold;
+  text-decoration: underline;
+  cursor: pointer;
+}
+>>>>>>> 066fedb9a261de7b180ec022d5461272322f48ba

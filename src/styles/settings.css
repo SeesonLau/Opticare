@@ -1,16 +1,18 @@
+
   .settings-container {
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
     align-items: flex-start;
-    padding: 20px;
+    padding: 10px;
     width: 100%;
     height: 100vh;
     box-sizing: border-box;
     background: var(--Color-Blue-Blue-100, #E0EFF9);
+    padding-left: 280px;
     
   }
-    
+ 
     .settings-title {
       width: 408.393px;
       height: 70.618px;
@@ -38,8 +40,9 @@
       margin-left: 20px;
       flex-grow: 1; /* Allow it to grow and fill available space */
       max-width: 1098px;
-      height: 829px;
+      height: 800px;
       overflow-y: auto; /* Enable vertical scrolling */
+      
     }
     
 
@@ -56,7 +59,7 @@
     .tab-button {
       width: calc(1098px / 5); /* Divide the total width by 5 */
       height: 50px;
-      background-color: rgba(192, 221, 255, 0.7);
+      background-color: rgba(143, 174, 211, 0.7);
       color: #FFF;
       border: none;
       outline: none;
@@ -159,17 +162,17 @@
 
     .save-button {
       display: flex;
-  width: 173px;
-  height: 26px;
-  justify-content: center;
-  align-items: center;
-  flex-shrink: 0;
-  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
-  background-color:  #3A8EF6;
-  color: #FFF;
-  border-radius: 15px;
-  border-color: #3A8EF6;
-  margin-top: 50px;
+      width: 173px;
+      height: 26px;
+      justify-content: center;
+      align-items: center;
+      flex-shrink: 0;
+      box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+      background-color:  #3A8EF6;
+      color: #FFF;
+      border-radius: 15px;
+      border-color: #3A8EF6;
+      margin-top: 50px;
     }
 
     .button-row {
@@ -215,7 +218,7 @@
 
       .privacy-container {
         width: 956px;
-        height: 2661px;
+        height: 725px;
         flex-shrink: 0;
         border-radius: 15px;
         border: 1px solid var(--Color-Blue-Blue-500, #559DDC);
@@ -266,15 +269,15 @@
 
       .privacyheading-container {
         display: inline-flex;
-  justify-content: center;
-  align-items: center;
-  gap: 10px;
-  border-radius: 5px;
-  border: 1px solid var(--Color-Blue-Blue-500, #559DDC);
-  background: var(--Color-Blue-Blue-100, #E0EFF9);
-  width: 892px;
-  height: 95px;
-  margin-left: 30px;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+        border-radius: 5px;
+        border: 1px solid var(--Color-Blue-Blue-500, #559DDC);
+        background: var(--Color-Blue-Blue-100, #E0EFF9);
+        width: 892px;
+        height: 95px;
+        margin-left: 30px;
       }
 
       .privacybody-container {
@@ -291,6 +294,8 @@
         margin-top: 30px;
         flex-direction: column;
         margin-bottom: 30px;
+        overflow: auto; /* Enables scrolling if content overflows */
+        max-height: 500px; /* Optional: Set a maximum height */
       }
 
       .about-container {
@@ -302,6 +307,7 @@
         padding: 20px;
         width: 100%;
         height: 100%;
+        
       }
       
       .about-subcontainer {
@@ -312,7 +318,7 @@
         background: var(--Color-Blue-Blue-500, #559DDC);
         padding: 20px ;
         width: 100%;
-    height: 100%;
+        height: 100%;
       }
       
       .about-heading {
@@ -348,7 +354,7 @@
 
       .help-container {
         width: 956px;
-        height: 3278px;
+        height: 725px;
         flex-shrink: 0;
         border-radius: 15px;
         border: 1px solid var(--Color-Blue-Blue-500, #559DDC);
@@ -408,22 +414,23 @@
         margin-top: 30px;
         flex-direction: column;
         margin-bottom: 30px;
+        overflow: auto;
       }
 
       .confirm-button {
         display: flex;
-    width: 173px;
-    height: 26px;
-    justify-content: center;
-    align-items: center;
-    flex-shrink: 0;
-    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
-    background-color:  #3A8EF6;
-    color: #FFF;
-    border-radius: 15px;
-    border-color: #3A8EF6;
-    margin-top: 30px;
-    margin-left: 400px;
+        width: 173px;
+        height: 26px;
+        justify-content: center;
+        align-items: center;
+        flex-shrink: 0;
+        box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+        background-color:  #3A8EF6;
+        color: #FFF;
+        border-radius: 15px;
+        border-color: #3A8EF6;
+        margin-top: 30px;
+        margin-left: 400px;
       }
 
 
