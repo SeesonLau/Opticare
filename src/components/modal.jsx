@@ -156,8 +156,6 @@ const Modal = ({ isOpen, onClose, title }) => {
                     className="custom-google-signin"
                     onClick={() => window.google.accounts.id.prompt()}
                     >
-                    <img src={GoogleIcon} alt="Google Icon" className="google-icon" />
-                    <span className="google-signin-text">Continue with Google</span>
                     </div>
                 </div>
                 {/* Register Section */}
