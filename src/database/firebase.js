@@ -28,6 +28,5 @@ export const register = (email, password) =>
 const database = getDatabase(app);
 
 // Or for Firestore
-const firestore = getFirestore(app);
-
+export const db = getFirestore(app);
 

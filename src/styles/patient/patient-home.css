@@ -7,6 +7,7 @@
   height: 100vh;
   box-sizing: border-box;
   background: var(--Color-Blue-Blue-100, #E0EFF9);
+  overflow: hidden;
 }
 
 .home-title  {
@@ -26,32 +27,30 @@
 
 
 /* Size of the whole page */
-
 .content-wrapper {
   display: flex;
-  justify-content: space-between;  /* Ensures that the sections are spaced */
-  padding: 0;  /* Remove padding to prevent excess space */
-  width: 1440px;
-  height: 1024px;
+  justify-content: space-between;
+  padding: 0;
+  width: 100%; /* Use 100% instead of fixed width */
+  height: auto; /* Remove fixed height to allow flexible content */
   box-sizing: border-box;
-  margin-left: 220px;
+  margin-left: 220px; /* Adjust this if needed */
 }
 
-.content {  
-  width: 72%;  /* Adjusted width to account for padding/margin */
+.content {
+  width: 72%; 
   display: flex;
   flex-direction: column;
-  gap: 10px;  /* Reduced gap between elements */
+  gap: 10px;
 }
 
 .content-right {
-  width: 413.75px;;  /* Adjusted width to make room */
+  width: 413.75px;
   display: flex;
   flex-direction: column;
   gap: 20px;
   position: relative;
 }
-
   
   .main-card {
     width: 850px;

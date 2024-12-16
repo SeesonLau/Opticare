@@ -6,6 +6,7 @@ import './styles/index.css';
 import Modal from './components/modal.jsx';
 import opticareLogo from './image/OptiCare LOGO2.png';
 import PatientHomePage from './components/patient/patient-homepage'; 
+//import PatientHomePage from './components/patient/patient-dashboard.jsx'; 
 import ClinicHomePage from './components/clinic/clinic-homepage'; 
 import reportWebVitals from './reportWebVitals';
 import Testimonials from './components/homepage/testimonials.jsx';

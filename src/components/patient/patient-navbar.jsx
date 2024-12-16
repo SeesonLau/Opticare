@@ -18,14 +18,6 @@ const PatientNavBar = ({ onComponentChange }) => {
         <FaHospitalUser className="icon" />
         <span className="button-text">EHR</span>
       </button>
-      <button className="appointments" onClick={() => onComponentChange('patient-appointments')}>
-        <FaCalendarAlt className="icon" />
-        <span className="button-text">Appointments</span>
-      </button>
-      <button className="search" onClick={() => onComponentChange('patient-search')} aria-label="Search">
-        <FaSearch className="icon" />
-        <span className="button-text">Search</span>
-      </button>
       <button className="settings" onClick={() => onComponentChange('settings')} aria-label="Se ttings">
         <FaCog className="icon" />
         <span className="button-text">Settings</span>
