@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import Calendar from 'react-calendar';
 import 'react-calendar/dist/Calendar.css';
 import '../../styles/patient/patient-home.css';
+import '../../styles/patient/patient-profile.css';
 import Textbox from '../patientprofile-textbox.jsx';
 import { MdAccountCircle } from "react-icons/md"; 
 import NewsCard from '../newscard.jsx';
