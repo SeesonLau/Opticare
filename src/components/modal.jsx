@@ -17,10 +17,8 @@ const Modal = ({ isOpen, onClose, title }) => {
         /* Load Google Identity Services */
         window.google.accounts.id.initialize({
           client_id: CLIENT_ID,
-          callback: handleSignIn, // Callback function to handle the response
+          callback: handleSignIn, 
         });
-      
-        /* Render the Google Sign-In button */
         window.google.accounts.id.renderButton(
           document.getElementById("google-signin-button"),
           { theme: "outline", size: "large", text: "continue_with" }
@@ -28,24 +26,18 @@ const Modal = ({ isOpen, onClose, title }) => {
     }, []);
     
       const handleGoogleResponse = (response) => {
-        // The 'response' object contains the credential/token
         console.log("Google Response:", response);
         alert(`Token Received: ${response.credential}`);
       };
       const handleSignIn = (response) => {
         const { credential } = response;
-    
-        // Decode the JWT to get user details
-        const googleUserData = jwtDecode(credential); // This will decode the JWT token
-    
-        const userEmail = googleUserData.email; // Extract email from decoded data
-        
-        // Store the email in localStorage
+        const googleUserData = jwtDecode(credential); 
+        const userEmail = googleUserData.email; 
+
         localStorage.setItem("googleAuthToken", credential);
-        localStorage.setItem("userEmail", userEmail);  // Save email in localStorage
-    
-        setIsSignedIn(true); // Update the sign-in status
-        navigate('/patient-homepage'); // Redirect to homepage
+        localStorage.setItem("userEmail", userEmail);  
+        setIsSignedIn(true); 
+        navigate('/patient-homepage');
     };
     
     const [email, setEmail] = useState('');
