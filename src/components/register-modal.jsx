@@ -36,7 +36,7 @@ const RegisterModal = ({ isOpen, onClose, title }) => {
         <div className="logo-and-user-type">
           <img className="opticare-logo" src={OpticareLogo} alt="Opticare Logo" />
           <div className="login-message">
-            <span className="blue-text">Register to&nbsp;</span>
+            <span className="blue-text">Sign up to&nbsp;</span>
             <span className="green-text">Optimize&nbsp;</span>
             <span className="blue-dark-text">Your Eye Care Journey</span>
           </div>
@@ -152,12 +152,12 @@ const RegisterModal = ({ isOpen, onClose, title }) => {
 
         <div className="login-button-section">
           <div className="login-button-background" />
-          <span className="login-button-text">Register</span>
+          <span className="login-button-text">Sign Up</span>
         </div>
 
         <div className="separator-section">
           <div className="line"></div>
-          <span className="or-text">OR</span>
+          <span className="or-text">or</span>
           <div className="line"></div>
         </div>
 
