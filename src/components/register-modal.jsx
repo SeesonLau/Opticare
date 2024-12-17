@@ -142,9 +142,7 @@ const RegisterModal = ({ isOpen, onClose, title }) => {
               <button
                 onClick={() => handleClear(setPassword)}
                 className="clear-button"
-                aria-label="Clear Password"
               >
-                &times;
               </button>
             )}
           </div>
