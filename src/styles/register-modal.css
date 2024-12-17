@@ -263,12 +263,12 @@
 /* New Styles to position first name and last name */
 .first-name-input-section {
   position: absolute;
-  top: 135px;
+  top: 150px;
   left: 50px;
 }
 
 .last-name-input-section {
   position: absolute;
-  top: 135px;
+  top: 150px;
   right: 50px;
 }
