@@ -70,8 +70,16 @@ const Modal = ({ isOpen, onClose, title }) => {
                     onClick={onClose}
                     aria-label="Close Modal"
                 >
+        <div className="modal-overlay">
+            <div className="modal-content">
+                <button
+                    className="close-button"
+                    onClick={onClose}
+                    aria-label="Close Modal"
+                >
                     <CloseIcon />
                 </button>
+                <h2>{title}</h2>
                 <h2>{title}</h2>
 
                 <div className="logo-and-user-type">
@@ -88,11 +96,17 @@ const Modal = ({ isOpen, onClose, title }) => {
                             className={`user-type-button ${
                                 userType === 'Patient' ? 'active' : ''
                             }`}
+                            className={`user-type-button ${
+                                userType === 'Patient' ? 'active' : ''
+                            }`}
                         >
                             Patient
                         </button>
                         <button
                             onClick={() => handleToggleUserType('Clinic')}
+                            className={`user-type-button ${
+                                userType === 'Clinic' ? 'active' : ''
+                            }`}
                             className={`user-type-button ${
                                 userType === 'Clinic' ? 'active' : ''
                             }`}
@@ -117,6 +131,11 @@ const Modal = ({ isOpen, onClose, title }) => {
                                 className="clear-button"
                                 aria-label="Clear Email"
                             >
+                            <button
+                                onClick={handleClearEmail}
+                                className="clear-button"
+                                aria-label="Clear Email"
+                            >
                                 &times;
                             </button>
                         )}
@@ -133,6 +152,7 @@ const Modal = ({ isOpen, onClose, title }) => {
                             className="input-field"
                         />
                         <button
+                            onClick={togglePasswordVisibility}
                             onClick={togglePasswordVisibility}
                             className="toggle-password-button"
                             aria-label="Toggle Password Visibility"
@@ -153,21 +173,22 @@ const Modal = ({ isOpen, onClose, title }) => {
                     <div className="line"></div>
                 </div>
 
-                {/* Google Sign-in Section */}
-                <div className="google-signin-section">
-                    <div id="google-signin-button"></div>
-                    {/* Optional custom design */}
-                    <div
-                    className="custom-google-signin"
-                    onClick={() => window.google.accounts.id.prompt()}
-                    >
-                    </div>
+                <div className="separator-section">
+                    <div className="line"></div>
+                    <div className="or-text">or</div>
+                    <div className="line"></div>
+                </div>
+
+                <div className="google-signin-section" onClick={() => alert('Google Sign-In Clicked')}>
+                    <img src={GoogleIcon} alt="Google Icon" className="google-icon" />
+                    <div className="google-signin-text">Continue with Google</div>
                 </div>
 
                 <div class="register-section">
                 <span class="register-info">if you don’t have an account, </span>
                 <span class="register-link"> Register Here!</span>
                 </div>
+
 
             </div>
         </div>
