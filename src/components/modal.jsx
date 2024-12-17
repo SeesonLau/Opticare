@@ -63,14 +63,17 @@ const Modal = ({ isOpen, onClose, title }) => {
     if (!isOpen) return null;
 
     return (
-        <div className="modal1-overlay">
-            <div className="modal1-content">
-                {/* Close Button */}
-                <button className="close-button" onClick={onClose} aria-label="Close Modal">
+        <div className="modal-overlay">
+            <div className="modal-content">
+                <button
+                    className="close-button"
+                    onClick={onClose}
+                    aria-label="Close Modal"
+                >
                     <CloseIcon />
                 </button>
+                <h2>{title}</h2>
 
-                {/* Logo and User Type */}
                 <div className="logo-and-user-type">
                     <img className="opticare-logo" src={OpticareLogo} alt="Opticare Logo" />
                     <div className="login-message">
@@ -82,20 +85,23 @@ const Modal = ({ isOpen, onClose, title }) => {
                     <div className="user-type-picker">
                         <button
                             onClick={() => handleToggleUserType('Patient')}
-                            className={`user-type-button ${userType === 'Patient' ? 'active' : ''}`}
+                            className={`user-type-button ${
+                                userType === 'Patient' ? 'active' : ''
+                            }`}
                         >
                             Patient
                         </button>
                         <button
                             onClick={() => handleToggleUserType('Clinic')}
-                            className={`user-type-button ${userType === 'Clinic' ? 'active' : ''}`}
+                            className={`user-type-button ${
+                                userType === 'Clinic' ? 'active' : ''
+                            }`}
                         >
                             Clinic
                         </button>
                     </div>
                 </div>
 
-                {/* Email Input */}
                 <div className="email-input-section">
                     <div className="input-wrapper">
                         <input
@@ -106,14 +112,17 @@ const Modal = ({ isOpen, onClose, title }) => {
                             className="input-field"
                         />
                         {email && (
-                            <button className="clear-button" onClick={handleClearEmail} aria-label="Clear Email">
+                            <button
+                                onClick={handleClearEmail}
+                                className="clear-button"
+                                aria-label="Clear Email"
+                            >
                                 &times;
                             </button>
                         )}
                     </div>
                 </div>
 
-                {/* Password Input */}
                 <div className="password-input-section">
                     <div className="input-wrapper">
                         <input
@@ -124,8 +133,8 @@ const Modal = ({ isOpen, onClose, title }) => {
                             className="input-field"
                         />
                         <button
-                            className="toggle-password-button"
                             onClick={togglePasswordVisibility}
+                            className="toggle-password-button"
                             aria-label="Toggle Password Visibility"
                         >
                             {showPassword ? <VisibilityOffIcon /> : <VisibilityIcon />}
@@ -133,30 +142,27 @@ const Modal = ({ isOpen, onClose, title }) => {
                     </div>
                 </div>
 
-                {/* Login Button */}
-                <div className="login-button-section">
-                    <button className="login-button" onClick={handleButtonClick}>
-                        Login
-                    </button>
+                <div className="login-button-section" onClick={handleButtonClick}>
+                    <div className="login-button-background"></div>
+                    <div className="login-button-text">Login</div>
                 </div>
 
-                {/* Google Sign-in Section */}
-                <div className="google-signin-section">
-                    <div id="google-signin-button"></div>
-                    {/* Optional custom design */}
-                    <div
-                    className="custom-google-signin"
-                    onClick={() => window.google.accounts.id.prompt()}
-                    >
-                    </div>
+                <div className="separator-section">
+                    <div className="line"></div>
+                    <div className="or-text">or</div>
+                    <div className="line"></div>
                 </div>
-                {/* Register Section */}
+
+                <div className="google-signin-section" onClick={() => alert('Google Sign-In Clicked')}>
+                    <img src={GoogleIcon} alt="Google Icon" className="google-icon" />
+                    <div className="google-signin-text">Continue with Google</div>
+                </div>
+
                 <div className="register-section">
-                    <span className="register-info">if you don’t have an account, </span>
-                    <span className="register-link" onClick={() => alert('Redirect to Register')}>
-                        Register Here!
-                    </span>
+                <span className="register-info">if you don’t have an account,&nbsp;</span>
+                <span className="register-link">Register Here!</span>
                 </div>
+
             </div>
         </div>
     );
