@@ -159,7 +159,7 @@ const Modal = ({ isOpen, onClose, title }) => {
                 </div>
 
                 <div className="register-section">
-                <span className="register-info">if you don’t have an account, &nbsp;</span>
+                <span className="register-info">if you don’t have an account,&nbsp;</span>
                 <span className="register-link">Register Here!</span>
                 </div>
 
