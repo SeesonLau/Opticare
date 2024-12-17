@@ -139,10 +139,7 @@ const PatientRecords = () => {
     const [remarks, setRemarks] = useState('');
 
     
-    
     const handleChange = (setter) => (e) => setter(e.target.value);
-
-
 
     return (
       <div className="records-container">

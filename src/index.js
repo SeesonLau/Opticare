@@ -16,6 +16,7 @@ import AboutUs from './components/homepage/aboutus.jsx';
 import OurTeam from './components/homepage/ourteam.jsx';
 
 const HomePage = () => {
+
   const [activeModal, setActiveModal] = useState(null);
   const navigate = useNavigate();
   const handleRegisterClick = () => {
