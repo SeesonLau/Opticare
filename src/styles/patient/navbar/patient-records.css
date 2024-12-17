@@ -129,16 +129,15 @@
   color: #4183CF;
   position: absolute;
   text-align: center;
-  writing-mode: vertical-rl; /* Default vertical text */
-  transform: rotate(180deg); /* Flips to appear on the other side */
+  writing-mode: vertical-lr;
+ 
 }
-
 
 .vertical-label.right1 {
   right: 5px;
   top: 0;
   bottom: 0;
-  margin-top: -150px;
+  margin-top: -150px; 
   
 }
 
@@ -148,6 +147,7 @@
   bottom: 0;
   margin-top: 150px;
 }
+
 /* OLD Rx Section */
 .rx-old {
   height: 80px;
@@ -257,8 +257,8 @@ line-height: 150%; /* 30px */
 }
 
 .fees-title{
-  width: 192px;
-  height: 60px;
+  width: 194px;
+  height: 61.5px;
   border-right: 2px solid var(--Color-Blue-Blue-600, #4183CF);
   border-bottom: 2px solid var(--Color-Blue-Blue-600, #4183CF);
   
@@ -274,15 +274,16 @@ line-height: 150%; /* 18px */
 margin-left: 50px;
 margin-top: 20px;
 }
+
 .fees-box{
   width: 50px;
-  height: 60px;
+  height: 61.5px;
   border-right: 2px solid var(--Color-Blue-Blue-600, #4183CF);
   border-bottom: 2px solid var(--Color-Blue-Blue-600, #4183CF);
 }
 
 .profile-photo {
-  margin-right: 70px; 
+  margin-right: 60px; 
 }
 
 .profile-photo img {
@@ -290,8 +291,8 @@ margin-top: 20px;
   height: 150px;
   border-radius: 50%;
   object-fit: cover;
-  margin-top: 70px; 
-  margin-left: -30px;
+  margin-top: 10px; 
+  margin-left: -10px;
   margin-right: -30px;
 }
 
@@ -299,9 +300,10 @@ margin-top: 20px;
 {
   width: 150px;
   height: 150px;
-  margin-top: 70px; 
-  margin-left: -30px;
+  margin-top: 10px; 
+  margin-left: -10px;
   margin-right: -30px;
+
 }
 
 .ehr-textbox-container {
@@ -474,6 +476,7 @@ line-height: 150%;
 .custom-button:active {
   transform: scale(0.95);
 }
+
 
 
 
