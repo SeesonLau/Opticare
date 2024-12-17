@@ -25,4 +25,24 @@
     width: 80%;
     max-width: 600px;
   }
+
+  .records-container {
+    margin-left: -50px;
+  }
+  .heading-container {
+    width: 408.393px;
+    height: 70.618px;
+  
+  }
+  
+  .heading-title {
+    color: var(--Color-Blue-Blue-500, #559DDC);
+    font-family: Montserrat;
+    font-size: 45px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 76.045px; /* 168.989% */
+    text-align: left; /* Align text to the left */
+  }
+  
   

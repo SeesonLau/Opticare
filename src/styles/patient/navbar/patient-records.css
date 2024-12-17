@@ -8,8 +8,49 @@
   background: var(--Color-Blue-Blue-100, #E0EFF9);
   overflow: hidden;
   padding-left: 300px;
+  margin-left: -300px;
+  margin-top: -10px;
 }
 
+  .heading-container {
+    width: 400px;
+    height: 70.618px;
+    margin-bottom: 10px;
+    margin-top: 50px;
+    align-items: center; 
+  }
+  
+  .heading-title {
+    color: var(--Color-Blue-Blue-500, #559DDC);
+    font-family: Montserrat;
+    font-size: 30px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 76.045px; 
+    text-align: left;
+    margin-left: 
+  }
+
+  .icon-container {
+    display: flex;
+    gap: 10px; /* Add some space between icons */
+    align-items: center; /* Center icons vertically */
+    margin-left: 650px;
+  }
+  
+  .icon {
+    width: 15px;
+    height: 15px;
+    color: #4183CF;
+    margin-top: 90px;
+    cursor: pointer;
+  }
+  .icon:hover {
+    color: #79339A; /* Change color on hover */
+    transform: scale(1.1); /* Slightly scale up the icon */
+  }
+  
+  
 .card-container {
   display: flex;
   flex-direction: column; 
@@ -48,20 +89,91 @@
   border-right: none; 
 }
 
-.rx-container{
+.rx-container {
   width: 200px;
   height: 400px;
   border-top: 2px solid var(--Color-Blue-Blue-600, #4183CF);
   border-right: 2px solid var(--Color-Blue-Blue-600, #4183CF);
+  position: relative;
 }
-.rx-new{
+
+/* NEW Rx Section */
+.rx-new {
   height: 318px;
   border-bottom: 2px solid var(--Color-Blue-Blue-600, #4183CF);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  text-align: center;
+  flex-direction: column; /* Stack "NEW" and "Rx" vertically */
+}
 
+.rx-new .rx-title {
+  font-family: Montserrat, sans-serif;
+  font-weight: bold;
+  font-size: 16px;
+  color: #4183CF;
+  margin-bottom: 5px;
 }
-.rx-old{
+
+.rx-new .rx-symbol {
+  font-size: 28px;
+  color: #000;
+}
+
+/* Vertical Labels */
+.vertical-label {
+  font-family: Montserrat, sans-serif;
+  font-size: 14px;
+  font-weight: bold;
+  color: #4183CF;
+  position: absolute;
+  text-align: center;
+  writing-mode: vertical-rl; /* Default vertical text */
+  transform: rotate(180deg); /* Flips to appear on the other side */
+}
+
+
+.vertical-label.right1 {
+  right: 5px;
+  top: 0;
+  bottom: 0;
+  margin-top: -150px;
+  
+}
+
+.vertical-label.right2 {
+  right: 5px;
+  top: 0;
+  bottom: 0;
+  margin-top: 150px;
+}
+/* OLD Rx Section */
+.rx-old {
   height: 80px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  position: relative;
+  flex-direction: column; /* Stack OLD and Rx vertically */
 }
+
+.rx-old .rx-title {
+  font-family: Montserrat, sans-serif;
+  font-weight: bold;
+  font-size: 16px;
+  color: #4183CF;
+  margin-bottom: 5px;
+}
+
+.rx-old .rx-symbol {
+  font-size: 28px;
+  color: #000;
+}
+
+
 
 .o-container{
   width: 298px;
@@ -88,7 +200,17 @@
 }
 
 .segment-card{
-  height: 158px; 
+  height: 145px; 
+}
+
+.segment-text{
+  color: var(--Color-Blue-Blue-700, #3871C1);
+text-align: center;
+font-family: Montserrat;
+font-size: 20px;
+font-style: normal;
+font-weight: 600;
+line-height: 150%; /* 30px */
 }
 
 .segment-text{
@@ -102,11 +224,17 @@ line-height: 150%; /* 30px */
 }
 
 .remarks-card {
-  height: 290px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between; /* Aligns items horizontally with reduced spacing */
+  align-items: center; /* Center vertically */
+  padding: 0 40px; /* Reduced padding */
 }
 
+
+
 .glasses-fees-container {
-  width: 298px;   
+  width: 296px;   
   height: 590px;;
   background: var(--Color-Blue-Blue-200, #C8E3F5);
   border-top: 2px solid var(--Color-Blue-Blue-600, #4183CF);
@@ -290,7 +418,7 @@ line-height: 150%;
 .ehr-textbox5 {
   display: flex;
   flex-direction: column;
-  width: 654px;
+  width: 570px;
   height: auto; /* Let it expand with the text */
   margin-top: 20px;
   margin-left: 30px;
@@ -308,7 +436,7 @@ line-height: 150%;
 }
 
 .ehr-textarea5 {
-  width: 630px;
+  width: 570px;
   height: 100px;
   border: 1px solid var(--Color-Blue-Blue-500, #559DDC);
   border-radius: 5px;
@@ -319,6 +447,34 @@ line-height: 150%;
   resize: none; /* Prevent resizing if not required */
 }
 
+.custom-button {
+  border: none;
+  border-radius: 5px;
+  background: linear-gradient(90deg, #3871C1 2.5%, #79339A 100%);
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  display: flex;
+  width: 68px;
+  height: 22px;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  flex-shrink: 0;
+  color: white; /* Text color */
+  font-size: 12px;
+  font-family: Montserrat, sans-serif;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.custom-button:hover {
+  background: linear-gradient(90deg, #79339A 2.5%, #3871C1 100%);
+  box-shadow: 0px 6px 6px rgba(0, 0, 0, 0.3);
+}
+
+.custom-button:active {
+  transform: scale(0.95);
+}
 
 
 
