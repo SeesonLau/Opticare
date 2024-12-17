@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useRef, useState, useEffect } from 'react';
 import '../../styles/settings.css';
 import { MdAccountCircle } from "react-icons/md"; 
 import OptiCareLogoAbout from '../../image/OptiCareLogoAbout.png';
@@ -134,15 +134,45 @@ const Settings = () => {
     </div>
   );
 
+  //
+  const handleUploadClick = () => {
+    // Create a file input element
+    const fileInput = document.createElement('input');
+    fileInput.type = 'file';
+    fileInput.accept = 'image/*';
+
+    // Set up an onChange event handler to read the file
+    fileInput.onchange = (e) => {
+      const file = e.target.files[0];
+      if (file) {
+        const reader = new FileReader();
+        reader.onload = (e) => {
+          setProfileImageUrl(e.target.result);
+        };
+        reader.readAsDataURL(file);
+      }
+    };
+
+    // Trigger the file input
+    fileInput.click();
+  };
+
+
   const Profile = () => (
     <div className="profile-container">
+    <div className="profile-photo-container">
       <div className="settingsprofile-photo">
         {profileImageUrl ? (
-          <img src={profileImageUrl} alt="Profile" />
+          <img src={profileImageUrl} alt="Profile" className="circular-image" />
         ) : (
           <MdAccountCircle className="settingsprofileicon" />
         )}
       </div>
+      <div className="upload-button" onClick={handleUploadClick}>
+        <i className="fas fa-cloud-upload-alt"></i>
+      </div>
+    </div>
+
       <div className="textbox-container">
         {/* Render input fields using ProfileTextbox */}
         <div className="textbox-row">
