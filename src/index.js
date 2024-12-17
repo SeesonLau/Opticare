@@ -28,7 +28,7 @@ const HomePage = () => {
   };
   */
   const handleLoginClick = () => {
-    navigate('/patient-homepage');
+    setActiveModal('register'); // This will open the login modal
   };
 
   const handleCloseModal = () => {
