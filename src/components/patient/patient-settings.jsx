@@ -62,9 +62,14 @@ const Settings = () => {
     }));
   };
 
+  //save
+  //save
+  //save
+  //save
+  //save
   const handleProfileSave = async () => {
     try {
-      const userId = "patientId"; // Replace with dynamic user ID
+      const userId = "crimsonwuffle@gmail.com"; // Replace with dynamic user ID
       const docRef = doc(db, "patients", userId);
       await setDoc(docRef, {
         ...profileData,
@@ -76,6 +81,12 @@ const Settings = () => {
       alert("Error saving profile. Please try again.");
     }
   };
+  //save
+  //save
+  //save
+  //save
+  //save
+  //save
 
   const [phonenumber, setPhonenumber] = useState('');
   

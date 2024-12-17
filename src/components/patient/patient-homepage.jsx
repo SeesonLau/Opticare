@@ -16,7 +16,7 @@ const PatientHomePage = () => {
     const [activeComponent, setActiveComponent] = useState("dashboard");
     const [date, setDate] = useState(new Date());
     const auth = getAuth();
-    const docRef = doc(db, "patients", "patientId");
+    const docRef = doc(db, "patients", "crimsonwuffle@gmail.com");
     const userID = auth.currentUser?.uid;
     const [profileData, setProfileData] = useState({
         firstname: "",
