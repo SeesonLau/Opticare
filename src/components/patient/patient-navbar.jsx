@@ -27,19 +27,19 @@ const PatientNavBar = ({ onComponentChange }) => {
       alt="OptiCare Logo" 
       className="navbar-logo" />
       <button className="dashboard" onClick={() => onComponentChange('dashboard')}>
-        <FaHome className="icon" />
+        <FaHome className="paticon" />
         <span className="button-text">Dashboard</span>
       </button>
       <button className="health-records" onClick={() => onComponentChange('patient-records')} aria-label="Health Records">
-        <FaHospitalUser className="icon" />
+        <FaHospitalUser className="paticon" />
         <span className="button-text">EHR</span>
       </button>
       <button className="settings" onClick={() => onComponentChange('settings')} aria-label="Se ttings">
-        <FaCog className="icon" />
+        <FaCog className="paticon" />
         <span className="button-text">Settings</span>
       </button>
       <button className="logOut" onClick={handleLogout} aria-label="Log Out">
-        <FaSignOutAlt className="icon" />
+        <FaSignOutAlt className="paticon" />
         <span className="button-text">Logout</span>
       </button>
     </div>

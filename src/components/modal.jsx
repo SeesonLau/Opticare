@@ -27,7 +27,7 @@ const Modal = ({ isOpen, onClose, title }) => {
     
       const handleGoogleResponse = (response) => {
         console.log("Google Response:", response);
-        alert('Token Received: ${response.credential}');
+        alert(`Token Received: ${response.credential}`);
       };
       const handleSignIn = (response) => {
         const { credential } = response;
@@ -153,20 +153,15 @@ const Modal = ({ isOpen, onClose, title }) => {
                     <div className="line"></div>
                 </div>
 
-                {/* Google Sign-in Section */}
                 <div className="google-signin-section">
-                    <div id="google-signin-button"></div>
-                    {/* Optional custom design */}
-                    <div
-                    className="custom-google-signin"
-                    onClick={() => window.google.accounts.id.prompt()}
-                    >
+                    <div id="google-signin-button" ></div>
+                    <div className="custom-google-signin" onClick={() => window.google.accounts.id.prompt()}>
                     </div>
                 </div>
 
-                <div class="register-section">
-                <span class="register-info">if you don’t have an account, </span>
-                <span class="register-link"> Register Here!</span>
+                <div className="register-section">
+                <span className="register-info">if you don’t have an account,&nbsp;</span>
+                <span className="register-link">Register Here!</span>
                 </div>
 
             </div>

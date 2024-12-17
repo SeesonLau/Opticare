@@ -3,13 +3,12 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: 95vh; /* Full height of the screen */
-  padding: 25px;
+  height: 100vh; /* Set full viewport height */
+  padding-bottom: 100px; /* Remove unnecessary padding */
+  margin: 0; /* Remove margin */
   background: var(--Color-Blue-Blue-100, #E0EFF9);
-  overflow: hidden;
-  padding-left: 300px;
-  margin-left: -300px;
-  margin-top: -10px;
+  overflow: hidden; /* Prevent scrollbars */
+  box-sizing: border-box; /* Ensure content fits */
 }
 
   .heading-container {
@@ -28,6 +27,7 @@
     font-weight: 700;
     line-height: 76.045px; 
     text-align: left;
+    margin-top: 20px;
   }
 
   .icon-container {
