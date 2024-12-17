@@ -28,8 +28,6 @@
       margin-top: 30px;
     }
     
-  
-
     .main-container {
       display: flex;
       justify-content: center;
@@ -91,20 +89,7 @@
   }
 
 
-  .settingsprofile-photo {
-    width: 200px;
-    height: 200px;
-    margin-top: 100px;  
-  }
-
-
-  .settingsprofileicon
-  {
-    width: 200px;
-    height: 200px;
-    margin-top: -100px;
-
-  }
+ 
   .textbox-container {
     display: flex;
     flex-direction: column;
@@ -433,9 +418,53 @@
         margin-left: 400px;
       }
 
-
+      .profile-photo-container {
+        display: flex;
+        align-items: center;
+        justify-content: space-between; /* Align items horizontally */
+        position: relative; /* To use absolute positioning for the upload icon */
+      }
       
-
+      .settingsprofile-photo {
+        width: 150px;
+        height: 150px;
+        margin-top: 50px;
+        border-radius: 50%; /* Circular shape */
+        overflow: hidden; /* Ensures the image is cropped within the circular frame */
+        display: flex;
+        justify-content: center;
+        
+        margin-bottom: 100px;
+      }
+      
+      .settingsprofileicon {
+        width: 150px;
+        height: 150px;
+        margin-top: -75px;
+        border-radius: 50%; /* Circular shape */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      
+      .upload-button {
+        position: absolute;
+        right: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 34px; /* Adjusted to a square */
+        height: 34px; /* Ensures it’s a perfect square */
+        background-color: #4183CF;
+        border-radius: 4px; /* Adds a slight roundness */
+        box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.15);
+      }
+      
+      .upload-button i {
+        font-size: 16px;
+        color: white;
+      }
+      
       
       
 
