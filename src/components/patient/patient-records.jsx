@@ -50,7 +50,6 @@ const PatientRecords = () => {
           setSize2(data.size2 || '');
           setRemarks(data.remarks || '');
   
-          alert("Form data successfully imported!");
         } catch (err) {
           alert("Error parsing JSON file. Please select a valid JSON file.");
         }
@@ -167,15 +166,7 @@ const PatientRecords = () => {
         <div ref={printRef} className="card-container">
           <div className="info-card">
             <div className="horizontal-container">
-              {/* Profile Photo */}
-              <div className="profile-photo">
-                {/* Conditionally render either the profile image or the MdAccountCircle icon */}
-                {profileImageUrl ? (
-                  <img src={profileImageUrl} alt="Profile" />
-                ) : (
-                  <MdAccountCircle className="profileicon" /> // Display the MdAccountCircle icon when no image is available
-                )}
-              </div>
+
               <div className="ehr-textbox-container">
               <div className="ehr-textbox-row">
                 <EHRTextbox label="Case No." value={caseno} onChange={handleChange(setCaseno)} />

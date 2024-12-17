@@ -17,7 +17,7 @@ const Settings = () => {
       useEffect(() => {
           const fetchProfileData = async () => {
               try {
-                  const docRef = doc(db, "patients", "patientId"); 
+                  const docRef = doc(db, "patients", "crimsonwuffle@gmail.com"); 
                   const docSnap = await getDoc(docRef);
   
                   if (docSnap.exists()) {
@@ -50,8 +50,9 @@ const Settings = () => {
           age: "",
           email: "",
           phoneNumber: "",
+          profileImageUrl: "",
+
       });
-  const [profileImageUrl, setProfileImageUrl] = useState(null);
 
   const handleChange = (e) => {
     const { name, value } = e.target; 
@@ -61,20 +62,31 @@ const Settings = () => {
     }));
   };
 
+  //save
+  //save
+  //save
+  //save
+  //save
   const handleProfileSave = async () => {
     try {
-        const userId = "patientId"; 
-        const docRef = doc(db, "patients", userId);
-        await setDoc(docRef, {
-            ...profileData,
-            profileImageUrl, 
-        });
-        alert("Profile saved successfully!");
+      const userId = "crimsonwuffle@gmail.com"; // Replace with dynamic user ID
+      const docRef = doc(db, "patients", userId);
+      await setDoc(docRef, {
+        ...profileData,
+        profileImageUrl: profileData.profileImageUrl, // Corrected line
+      });
+      alert("Profile saved successfully!");
     } catch (error) {
-        console.error("Error saving profile:", error);
-        alert("Error saving profile. Please try again.");
+      console.error("Error saving profile:", error);
+      alert("Error saving profile. Please try again.");
     }
   };
+  //save
+  //save
+  //save
+  //save
+  //save
+  //save
 
   const [phonenumber, setPhonenumber] = useState('');
   
@@ -136,36 +148,41 @@ const Settings = () => {
 
   //
   const handleUploadClick = () => {
-    // Create a file input element
-    const fileInput = document.createElement('input');
-    fileInput.type = 'file';
-    fileInput.accept = 'image/*';
-
-    // Set up an onChange event handler to read the file
+    const fileInput = document.createElement("input");
+    fileInput.type = "file";
+    fileInput.accept = "image/*";
+  
     fileInput.onchange = (e) => {
       const file = e.target.files[0];
       if (file) {
         const reader = new FileReader();
         reader.onload = (e) => {
-          setProfileImageUrl(e.target.result);
+          const imageUrl = e.target.result; // Get the image URL
+          setProfileData((prevData) => ({
+            ...prevData,
+            profileImageUrl: imageUrl, // Update profileImageUrl in state
+          }));
         };
         reader.readAsDataURL(file);
       }
     };
-
-    // Trigger the file input
+  
     fileInput.click();
   };
-
+  
 
   const Profile = () => (
     <div className="profile-container">
     <div className="profile-photo-container">
       <div className="settingsprofile-photo">
-        {profileImageUrl ? (
-          <img src={profileImageUrl} alt="Profile" className="circular-image" />
-        ) : (
-          <MdAccountCircle className="settingsprofileicon" />
+      {profileData.profileImageUrl ? (
+            <img
+              src={profileData.profileImageUrl}
+              alt="Profile"
+              className="circular-image"
+            />
+          ) : (
+            <MdAccountCircle className="settingsprofileicon" />
         )}
       </div>
       <div className="upload-button" onClick={handleUploadClick}>

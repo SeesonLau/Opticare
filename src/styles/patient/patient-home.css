@@ -228,15 +228,4 @@ height: 217.116px;
 }
 
 
-.profile-photo img {
-  width: 100px;
-  height: 100px;
-  border-radius: 50%; /* Makes the image circular */
-  object-fit: cover; /* Ensures the image maintains its aspect ratio and fits well */
-}
-
-.profile-photo .profileicon {
-  font-size: 50px;
-  color: #ccc;
-}
 

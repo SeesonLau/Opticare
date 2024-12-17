@@ -8,8 +8,8 @@ const NewsCard = () => {
 
   useEffect(() => {
     const fetchNews = async () => {
-      const apiKey = "3cfc119633ee4c71bafef0e3b3ef1637";
-      const searchQuery = "vision OR eye care OR optometry OR eye treatment OR eyeglasses OR eye disease OR ophthalmology OR contact lenses OR LASIK OR retina OR glaucoma OR cataract OR blindness OR vision therapy OR visual impairment"
+      const apiKey = "add108f65bd940b09e9788d650eca81c";
+      const searchQuery = "vision OR eye care OR optometry OR eye treatment OR eyeglasses OR eye disease OR ophthalmology OR contact lenses OR LASIK OR retina OR glaucoma OR cataract OR blindness OR vision therapy OR visual impairment OR politics OR news OR mango"
       const apiUrl = `https://newsapi.org/v2/everything?q=${encodeURIComponent(searchQuery)}&pageSize=10&apiKey=${apiKey}`; // Fetch 10 articles
 
       try {

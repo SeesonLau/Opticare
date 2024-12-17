@@ -16,7 +16,7 @@ const PatientHomePage = () => {
     const [activeComponent, setActiveComponent] = useState("dashboard");
     const [date, setDate] = useState(new Date());
     const auth = getAuth();
-    const docRef = doc(db, "patients", "patientId");
+    const docRef = doc(db, "patients", "crimsonwuffle@gmail.com");
     const userID = auth.currentUser?.uid;
     const [profileData, setProfileData] = useState({
         firstname: "",
@@ -35,6 +35,7 @@ const PatientHomePage = () => {
     };
 
     // Fetch profile data from Firebase
+
     useEffect(() => {
         const fetchProfileData = async () => {
             try {
@@ -42,7 +43,7 @@ const PatientHomePage = () => {
                 const userId = auth.currentUser?.uid; 
 
                 if (userId) {
-                    const docRef = doc(db, "patients", userId); 
+                    const docRef = doc(db, "patients", "crimsonwuffle@gmail.com"); 
                     const docSnap = await getDoc(docRef); 
                     if (docSnap.exists()) {
                         setProfileData(docSnap.data());
@@ -52,8 +53,7 @@ const PatientHomePage = () => {
                 } else {
                     console.error("No user is logged in!");
                 }
-
-                const docRef = doc(db, "patients", "patientId");
+                const docRef = doc(db, "patients", "crimsonwuffle@gmail.com");
                 const docSnap = await getDoc(docRef);
 
                 if (docSnap.exists()) {
