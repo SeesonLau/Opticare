@@ -153,9 +153,10 @@ const Modal = ({ isOpen, onClose, title }) => {
                     <div className="line"></div>
                 </div>
 
-                <div className="google-signin-section" onClick={() => alert('Google Sign-In Clicked')}>
-                    <img src={GoogleIcon} alt="Google Icon" className="google-icon" />
-                    <div className="google-signin-text">Continue with Google</div>
+                <div className="google-signin-section">
+                    <div id="google-signin-button" ></div>
+                    <div className="custom-google-signin" onClick={() => window.google.accounts.id.prompt()}>
+                    </div>
                 </div>
 
                 <div className="register-section">

@@ -27,13 +27,12 @@
     text-decoration: none; /* Make sure text inside buttons is not underlined */
   }
 
-.icon {
+.paticon {
     width: 30px;
     height: 30px;
     background-color: transparent; 
     object-fit: contain; 
     color: white;
-    
 }
 
 .navbar-logo {

@@ -27,8 +27,8 @@ const PatientHomePage = () => {
         age: "",
         email: "",
         phoneNumber: "",
+        profileImageUrl: "",
     });
-    const profileImageUrl = null; 
 
     const handleComponentChange = (component) => {
         setActiveComponent(component);
@@ -85,8 +85,8 @@ const PatientHomePage = () => {
                     {/* Profile Card */}
                     <div className="main-card">
                         <div className="profile-photo">
-                            {profileImageUrl ? (
-                                <img src={profileImageUrl} alt="Profile" />
+                            {profileData.profileImageUrl ? (
+                                <img src={profileData.profileImageUrl} alt="Profile" className="profile-image" />
                             ) : (
                                 <MdAccountCircle className="profileicon" />
                             )}
@@ -96,7 +96,6 @@ const PatientHomePage = () => {
                             <p className="patient-label">Patient</p>
                         </div>
                     </div>
-
                     {/* Profile Section */}
                     <div className="profile">
                         <h1 className="profile-text">Profile</h1>
