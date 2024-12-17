@@ -6,7 +6,7 @@ import { EHR2Textbox } from '../ehr-textbox.jsx';
 import { EHR3Textbox } from '../ehr-textbox.jsx';
 import { EHR4Textbox } from '../ehr-textbox.jsx';
 import { EHR5Textbox } from '../ehr-textbox.jsx';
-import GradientButton from '../gradient-button.jsx';
+//import GradientButton from '../gradient-button.jsx';
 
 const PatientRecords = () => {
   
@@ -361,7 +361,7 @@ const PatientRecords = () => {
             onChange={handleChange26} 
            />
             <div className="button-container">
-              <GradientButton label="Save" />
+              {/*<GradientButton label="Save" />*/}
             </div>
           </div>
 

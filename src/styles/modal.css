@@ -204,7 +204,6 @@
   margin-top: 20px;
   margin-right: 280px;
   margin-left: 295px;
-  border: 1px solid #3871C1; /* Adds the outline */
   border-radius: 5px; /* Rounds the corners of the box */
   transition: all 0.3s ease; /* Smooth hover effect */
 }
