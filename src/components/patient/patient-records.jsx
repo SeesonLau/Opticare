@@ -14,14 +14,97 @@ const PatientRecords = () => {
   
   const profileImageUrl = null; 
 
-  const handleImport = () => {
-    console.log('Download icon clicked');
-    // Add your download functionality here
+  const handleImport = (event) => {
+    const file = event.target.files[0];
+    if (file) {
+      const reader = new FileReader();
+      reader.onload = (e) => {
+        try {
+          const data = JSON.parse(e.target.result);
+  
+          // Populate the form fields with imported data
+          setCaseno(data.caseno || '');
+          setPatientname(data.name || '');
+          setDate(data.date || '');
+          setAddress(data.address || '');
+          setAge(data.age || '');
+          setClinic(data.clinic || '');
+          setPhonenumber(data.phone || '');
+          setOccupation(data.occupation || '');
+          setDoctor(data.doctor || '');
+          setDistanceOD(data.distanceOD || '');
+          setDistanceOS(data.distanceOS || '');
+          setNearOD(data.nearOD || '');
+          setNearOS(data.nearOS || '');
+          setRxOD(data.oldRxOD || '');
+          setRxOS(data.oldRxOS || '');
+          setODvaU(data.ODvaU || '');
+          setOSvaU(data.OSvaU || '');
+          setODvaRX(data.ODvaRX || '');
+          setOSvaRX(data.OSvaRX || '');
+          setPD(data.pd || '');
+          setDBL(data.dbl || '');
+          setSize1(data.size1 || '');
+          setBifocals(data.bifocals || '');
+          setLens(data.lens || '');
+          setSize2(data.size2 || '');
+          setRemarks(data.remarks || '');
+  
+          alert("Form data successfully imported!");
+        } catch (err) {
+          alert("Error parsing JSON file. Please select a valid JSON file.");
+        }
+      };
+      reader.readAsText(file);
+    }
   };
   
-  const handleExport  = async (printRef) => {
+  
+  
+  const handleExport = async (printRef) => {
+    // Export to PDF logic here
     await ExportEHR(printRef);
+  
+    // Extract form data
+    const formData = {
+      caseno,
+      name,
+      date,
+      address,
+      age,
+      clinic,
+      phone,
+      occupation,
+      doctor,
+      distanceOD,
+      distanceOS,
+      nearOD,
+      nearOS,
+      oldRxOD,
+      oldRxOS,
+      ODvaU,
+      OSvaU,
+      ODvaRX,
+      OSvaRX,
+      pd,
+      dbl,
+      size1,
+      bifocals,
+      lens,
+      size2,
+      remarks,
+    };
+  
+    // Save form data as a JSON file
+    const dataStr = "data:text/json;charset=utf-8," + encodeURIComponent(JSON.stringify(formData));
+    const downloadAnchor = document.createElement('a');
+    downloadAnchor.setAttribute("href", dataStr);
+    downloadAnchor.setAttribute("download", "formData.json");
+    document.body.appendChild(downloadAnchor);
+    downloadAnchor.click();
+    downloadAnchor.remove();
   };
+  
 
    const [caseno, setCaseno] = useState(''); 
    const [name, setPatientname] = useState(''); 
@@ -53,8 +136,8 @@ const PatientRecords = () => {
     const [bifocals, setBifocals] = useState('');
     const [lens, setLens] = useState('');
     const [size2, setSize2] = useState('');
-
     const [remarks, setRemarks] = useState('');
+
     
     
     const handleChange = (setter) => (e) => setter(e.target.value);
@@ -68,9 +151,20 @@ const PatientRecords = () => {
             <h1 className="heading-title">My EHR</h1>
           </div>
           <div className="icon-container">
-          <i className="fas fa-download icon" onClick={handleImport}></i> {/* Add handleDownload here */}
-          <i className="fas fa-print icon" onClick={() => handleExport(printRef)}></i> 
-          </div>
+  {/* Import button */}
+  <label htmlFor="file-input" className="import-label">
+  <i className="fas fa-download icon"></i> 
+  </label>
+  <input
+    id="file-input"
+    type="file"
+    accept=".json"
+    onChange={handleImport}
+    style={{ display: 'none' }} // Hide the input itself and use the label as a trigger
+  />
+  {/* Export button */}
+  <i className="fas fa-print icon" onClick={() => handleExport(printRef)}></i>
+</div>
         </div>
   
         <div ref={printRef} className="card-container">
