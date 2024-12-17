@@ -143,7 +143,7 @@ const HomePage = () => {
 
       {/* Modals */}
       {activeModal === 'register' && (
-        <Modal isOpen={true} title="Register" onClose={handleCloseModal}>
+        <Modal isOpen={true} title="" onClose={handleCloseModal}>
           <div>
             <p>Create an account to unlock all features.</p>
             {/* Add register form here */}
