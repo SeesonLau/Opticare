@@ -6,10 +6,21 @@ import { EHR2Textbox } from '../ehr-textbox.jsx';
 import { EHR3Textbox } from '../ehr-textbox.jsx';
 import { EHR4Textbox } from '../ehr-textbox.jsx';
 import { EHR5Textbox } from '../ehr-textbox.jsx';
+import GradientButton from '../gradient-button.jsx';
 
 const PatientRecords = () => {
   
   const profileImageUrl = null; 
+
+  const handleDownload = () => {
+    console.log('Download icon clicked');
+    // Add your download functionality here
+  };
+  
+  const handlePrint = () => {
+    console.log('Print icon clicked');
+    // Add your print functionality here
+  };
 
    const [caseno, setCaseno] = useState(''); 
    const [name, setPatientname] = useState(''); 
@@ -154,8 +165,18 @@ const PatientRecords = () => {
   return (
     <div className="records-container">
 
-      <div className="card-container">
+<div className="horizontal-container">
+<div className="heading-container">
+  <h1 className="heading-title">My EHR</h1>
+</div>
+<div className="icon-container">
+<i class="fas fa-download icon"  onClick={handleDownload}></i> 
+    <i class="fas fa-print icon"  onClick={handlePrint}></i> 
+</div>
+</div>
 
+
+      <div className="card-container">
         <div className="info-card">
         <div className="horizontal-container">
           {/* Profile Photo */}
@@ -193,7 +214,7 @@ const PatientRecords = () => {
             />
             <EHRTextbox 
             label="Age" 
-            value={age} 
+            value={age}   
             onChange={handleChange5} 
             />
             <EHRTextbox 
@@ -228,10 +249,22 @@ const PatientRecords = () => {
           <div className="exam-card">
           <div className="horizontal-container">
 
-          <div className="rx-container"> 
-            <div className="rx-new"> </div>
-            <div className="rx-old"> </div>
-          </div>
+<div class="rx-container">
+  
+  <div class="rx-new">
+    <div class="vertical-label right1">DISTANCE</div>
+    <span class="rx-title">NEW</span>
+    <span class="rx-symbol">℞</span>
+    <div class="vertical-label right2">NEAR</div>
+  </div>
+
+
+  <div class="rx-old">
+    <span class="rx-title">OLD</span>
+    <span class="rx-symbol">℞</span>
+  </div>
+</div>
+
 
           <div className="o-container"> 
             <div className="o-card"> 
@@ -305,6 +338,7 @@ const PatientRecords = () => {
             onChange={handleChange19} 
             />
               </div>
+
             </div>
             <div className="segment-card">
               <h1 class="segment-text">SEGMENT</h1>
@@ -315,19 +349,22 @@ const PatientRecords = () => {
             value={oldRxOS} 
             onChange={handleChange15} 
             />
-            </div>
-            
+            </div>    
+          </div>
           </div>
 
-          </div>
           </div>  
           <div className="remarks-card">
-          <EHR5Textbox 
+            <EHR5Textbox 
             label="Remarks" 
             value={remarks} 
             onChange={handleChange26} 
-            />
+           />
+            <div className="button-container">
+              <GradientButton label="Save" />
+            </div>
           </div>
+
         </div>
 
         <div className="glasses-fees-container">
